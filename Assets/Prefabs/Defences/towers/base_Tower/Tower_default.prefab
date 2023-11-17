@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &338988403498862456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9045346031154979461}
+  - component: {fileID: 7921717974883464864}
+  m_Layer: 0
+  m_Name: Enemy Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9045346031154979461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338988403498862456}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8496435470261094243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7921717974883464864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338988403498862456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d9f2e9a93aa6b40bf4ee09edc3b366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3349733052348123647
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8496435470261094243}
   m_Layer: 0
-  m_Name: Attacker_default
+  m_Name: Tower_default
   m_TagString: Tower
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -63,6 +107,7 @@ Transform:
   - {fileID: 7578002894438219016}
   - {fileID: 3974513919653453788}
   - {fileID: 1185724144499194546}
+  - {fileID: 9045346031154979461}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6117021592432123236
@@ -94,8 +139,8 @@ Transform:
   m_GameObject: {fileID: 6117021592432123236}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8496435470261094243}
@@ -242,3 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65a4579208fb54449ac490015d61763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TowerRange: 0
+  TowerDamage: 0
+  TowerAttackSpeed: 0

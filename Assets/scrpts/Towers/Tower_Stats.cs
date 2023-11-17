@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Tower_Stats : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // public 
+    int TowerPrice;
+    public float TowerRange;
+    // private
+
+    // private modificables en editor
+    [SerializeField] private float TowerDamage;
+    [SerializeField] private float TowerAttackSpeed;
+
+    public void Towwer_Upgrade()
     {
-        
+        TowerDamage += TowerDamage * .25f;
+        TowerAttackSpeed += TowerAttackSpeed * .25f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
