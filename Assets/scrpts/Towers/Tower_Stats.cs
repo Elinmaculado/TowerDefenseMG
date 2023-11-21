@@ -12,11 +12,18 @@ public class Tower_Stats : MonoBehaviour
     // private modificables en editor
     [SerializeField] private float TowerDamage;
     [SerializeField] private float TowerAttackSpeed;
+    [SerializeField] private SphereCollider SphereCollider;
 
-    public void Towwer_Upgrade()
+    public void Tower_Upgrade()
     {
         TowerDamage += TowerDamage * .25f;
         TowerAttackSpeed += TowerAttackSpeed * .25f;
+        TowerRange += TowerRange * .25f;
+    }
+
+    private void Update()
+    {
+        SphereCollider.radius = TowerRange;
     }
 
 }

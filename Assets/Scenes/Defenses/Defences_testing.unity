@@ -232,6 +232,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: TowerRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: TowerDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: SphereCollider
+      value: 
+      objectReference: {fileID: 1210174356}
+    - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: TowerAttackSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4298164951040437735, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.76
@@ -357,6 +373,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1408782191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1210174356 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 523452115568528397, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+  m_PrefabInstance: {fileID: 740178870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1408782190
 GameObject:
   m_ObjectHideFlags: 0
