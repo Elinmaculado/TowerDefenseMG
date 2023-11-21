@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 365393487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1917aaaf9c92904194764fdc9ff4153, type: 3}
+  m_Script: {fileID: 11500000, guid: c019bc326c67c2341a05eba9a10667fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
@@ -161,12 +161,9 @@ MonoBehaviour:
     totalOfEnemies: 3
   - enemieType: {fileID: 1039568512}
     totalOfEnemies: 4
-  spawnPosition:
-  - {fileID: 1616034737}
-  - {fileID: 531596197}
-  - {fileID: 722846229}
-  remainingEnemies: 10
-  delayTime: 2
+  spawnPosition: []
+  remainingEnemies: 0
+  delayTime: 0
 --- !u!4 &365393489
 Transform:
   m_ObjectHideFlags: 0

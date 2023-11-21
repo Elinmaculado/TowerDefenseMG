@@ -5,12 +5,12 @@ using UnityEngine;
 public class Spawners : MonoBehaviour
 {
     [System.Serializable]
-    public struct Enemie { 
+    public class Enemie { 
         public GameObject enemieType;
         public int totalOfEnemies;
     }
 
-    [SerializeField] Enemie[] enemies;
+    [SerializeField] List<Enemie> enemies;
     [SerializeField] Transform[] spawnPosition;
     
 
@@ -21,7 +21,7 @@ public class Spawners : MonoBehaviour
     private void Start()
     {
         SpawnEnemy();
-        for(int i = 0; i < enemies.Length; i++)
+        for(int i = 0; i < enemies.Count -1; i++)
         {
             remainingEnemies += enemies[i].totalOfEnemies;
         }
@@ -29,23 +29,21 @@ public class Spawners : MonoBehaviour
     void SpawnEnemy()
     {
         int randomSpawnPos = Random.Range(0, spawnPosition.Length);
-        int randomEnemyType = Random.Range(0, enemies.Length);
+        int randomEnemyType = Random.Range(0, enemies.Count-1);
 
-        do
+        Instantiate(enemies[randomEnemyType].enemieType, spawnPosition[randomSpawnPos].position, enemies[randomEnemyType].enemieType.transform.rotation);
+        remainingEnemies--;
+        enemies[randomEnemyType].totalOfEnemies -= 1;
+        
+        if(enemies[randomEnemyType].totalOfEnemies == 0)
         {
-            if (enemies[randomEnemyType].totalOfEnemies > 0)
-            {
-                Instantiate(enemies[randomEnemyType].enemieType, spawnPosition[randomSpawnPos].position, enemies[randomEnemyType].enemieType.transform.rotation);
-                remainingEnemies--;
-                enemies[randomEnemyType].totalOfEnemies--;
-                StartCoroutine(SpawnDelay());
-            }
-            else
-            {
-
-                randomEnemyType = randomEnemyType==enemies.Length? 0 : randomEnemyType + 1;
-            }  
-        } while (enemies[randomEnemyType].totalOfEnemies == 0) ;
+            enemies.RemoveAt(randomEnemyType);  
+        }
+       
+        if (enemies.Count >= 0)
+        {
+             StartCoroutine(SpawnDelay());   
+        }
     }
 
     IEnumerator SpawnDelay()
