@@ -10,7 +10,7 @@ public class Spawners : MonoBehaviour
         public int totalOfEnemies;
     }
 
-    [SerializeField] Enemie[] enemies;
+    [SerializeField] List<Enemie> enemies;
     [SerializeField] Transform[] spawnPosition;
     
 
@@ -31,21 +31,19 @@ public class Spawners : MonoBehaviour
         int randomSpawnPos = Random.Range(0, spawnPosition.Length);
         int randomEnemyType = Random.Range(0, enemies.Length);
 
-        do
+        Instantiate(enemies[randomEnemyType].enemieType, spawnPosition[randomSpawnPos].position, enemies[randomEnemyType].enemieType.transform.rotation);
+        remainingEnemies--;
+        enemies[randomEnemyType].totalOfEnemies--;
+        
+        if(enemies[randomEnemyType].totalOfEnemies == 0)
         {
-            if (enemies[randomEnemyType].totalOfEnemies > 0)
-            {
-                Instantiate(enemies[randomEnemyType].enemieType, spawnPosition[randomSpawnPos].position, enemies[randomEnemyType].enemieType.transform.rotation);
-                remainingEnemies--;
-                enemies[randomEnemyType].totalOfEnemies--;
-                StartCoroutine(SpawnDelay());
-            }
-            else
-            {
-
-                randomEnemyType = randomEnemyType==enemies.Length? 0 : randomEnemyType + 1;
-            }  
-        } while (enemies[randomEnemyType].totalOfEnemies == 0) ;
+            enemies.RemoveAt(randomEnemyType);  
+        }
+       
+        if (enemies.Count >= 0)
+        {
+             StartCoroutine(SpawnDelay());   
+        }
     }
 
     IEnumerator SpawnDelay()
