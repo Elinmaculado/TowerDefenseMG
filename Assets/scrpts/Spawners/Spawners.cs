@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawners : MonoBehaviour
 {
     [System.Serializable]
-    public struct Enemie { 
+    public class Enemie { 
         public GameObject enemieType;
         public int totalOfEnemies;
     }
@@ -21,7 +21,7 @@ public class Spawners : MonoBehaviour
     private void Start()
     {
         SpawnEnemy();
-        for(int i = 0; i < enemies.Length; i++)
+        for(int i = 0; i < enemies.Count -1; i++)
         {
             remainingEnemies += enemies[i].totalOfEnemies;
         }
@@ -29,11 +29,11 @@ public class Spawners : MonoBehaviour
     void SpawnEnemy()
     {
         int randomSpawnPos = Random.Range(0, spawnPosition.Length);
-        int randomEnemyType = Random.Range(0, enemies.Length);
+        int randomEnemyType = Random.Range(0, enemies.Count-1);
 
         Instantiate(enemies[randomEnemyType].enemieType, spawnPosition[randomSpawnPos].position, enemies[randomEnemyType].enemieType.transform.rotation);
         remainingEnemies--;
-        enemies[randomEnemyType].totalOfEnemies--;
+        enemies[randomEnemyType].totalOfEnemies -= 1;
         
         if(enemies[randomEnemyType].totalOfEnemies == 0)
         {
