@@ -1,58 +1,92 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Spawners : MonoBehaviour
-{
+{   
+    [SerializeField]  List<Enemie> levelEnemies;
+    [SerializeField] Transform[] spawnPositions;
+    
+    public int totalOfEnemies = 0;
+
+    public List<int> enemyTypeQueue = new();
+    public List<int> spawnPositionQueue = new();
+
+    int spawnIndex = 0;
+
+
+    public float spawnDelay = 1.0f;
     [System.Serializable]
     public class Enemie { 
         public GameObject enemieType;
-        public int totalOfEnemies;
+        public int enemyAmount;
     }
 
-    [SerializeField] List<Enemie> enemies;
-    [SerializeField] Transform[] spawnPosition;
-    
-
-    [SerializeField] int remainingEnemies;
-
-    [SerializeField] float delayTime;
+ 
 
     private void Start()
     {
-        SpawnEnemy();
-        for(int i = 0; i < enemies.Count -1; i++)
-        {
-            remainingEnemies += enemies[i].totalOfEnemies;
-        }
-    }
-    void SpawnEnemy()
-    {
-        int randomSpawnPos = Random.Range(0, spawnPosition.Length);
-        int randomEnemyType = Random.Range(0, enemies.Count-1);
-
-        Instantiate(enemies[randomEnemyType].enemieType, spawnPosition[randomSpawnPos].position, enemies[randomEnemyType].enemieType.transform.rotation);
-        remainingEnemies--;
-        enemies[randomEnemyType].totalOfEnemies -= 1;
         
-        if(enemies[randomEnemyType].totalOfEnemies == 0)
-        {
-            enemies.RemoveAt(randomEnemyType);  
-        }
-       
-        if (enemies.Count >= 0)
-        {
-             StartCoroutine(SpawnDelay());   
-        }
+        GenerateEnemyQueue();
+        SpawnEnemy();   
     }
 
-    IEnumerator SpawnDelay()
+    private void GenerateEnemyQueue()
     {
-        yield return new WaitForSeconds(delayTime);
-        if (remainingEnemies > 0)
+        //Copies enemies so we can eliminate them from the pool once all of them where queued
+        List<Enemie> tmpEnemies = levelEnemies.ToList();
+
+        //Calculates the total amount of enemies
+        for (int i = 0; i < levelEnemies.Count; i++)
         {
-            SpawnEnemy();
+            totalOfEnemies += tmpEnemies[i].enemyAmount;
         }
+
+        //Generates enemy type queue
+        for (int i = 0; i < totalOfEnemies; i++)
+        {
+            int enemyIndex = UnityEngine.Random.Range(0, tmpEnemies.Count);
+            enemyTypeQueue.Add(enemyIndex);
+            tmpEnemies[enemyIndex].enemyAmount--;
+            if (tmpEnemies[enemyIndex].enemyAmount <= 0)//Deletes enemy from pool once al of them where queued
+            {
+                tmpEnemies.RemoveAt(enemyIndex);
+            }
+        }
+
+        //Generate spawn position queue
+        for (int j = 0; j < totalOfEnemies; j++)
+        {
+            spawnPositionQueue.Add(UnityEngine.Random.Range(0, spawnPositions.Length));
+        }
+
+        
     }
     
+    void SpawnEnemy()
+    {
+
+        if(totalOfEnemies > 0)
+        {
+            Instantiate(levelEnemies[enemyTypeQueue[spawnIndex]].enemieType, 
+                        spawnPositions[spawnPositionQueue[spawnIndex]].transform.position, 
+                        levelEnemies[enemyTypeQueue[spawnIndex]].enemieType.transform.rotation);
+            spawnIndex++;   
+            StartCoroutine(SpawnEnemyDelay());
+            totalOfEnemies--;
+        }
+        else{
+            Debug.Log("Level cleared");
+        }
+
+    }
+
+    IEnumerator SpawnEnemyDelay()
+    {
+        yield return new WaitForSeconds(spawnDelay);
+        SpawnEnemy();
+      
+    }
 }
