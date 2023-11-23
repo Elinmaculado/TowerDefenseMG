@@ -1,20 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_Detector : MonoBehaviour
 {
     // public
-    public List<GameObject> Enemylist;
+
     // private
 
     //private modificables en editor
+    [SerializeField] private GameObject torret;
+    [SerializeField] private List<GameObject> Enemylist;
 
+    private void Update()
+    {
+        if (Enemylist.Count > 0 )
+        {
+            apuntar();
+        }
+    }
+
+    // apuntado
+    void apuntar()
+    {
+        torret.transform.LookAt(Enemylist[0].transform.position);
+    }
+
+
+    // list enter and exit
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("entro un malo maloso");
            Enemylist.Add(other.gameObject);
         }
     }
@@ -22,7 +40,6 @@ public class Enemy_Detector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Ya se te fue el malo maloso");
             Enemylist.Remove(other.gameObject);
         }
     }
