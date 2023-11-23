@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9045346031154979461}
   - component: {fileID: 7921717974883464864}
   - component: {fileID: 850553569129348662}
+  - component: {fileID: 44080513996007371}
   m_Layer: 0
   m_Name: Enemy Detector
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338988403498862456}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -66,6 +67,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &44080513996007371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338988403498862456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4ccda2607631d41898a8590fbe8aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3349733052348123647
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,12 +103,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3349733052348123647}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.87, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8496435470261094243}
+  m_Father: {fileID: 7578002894438219016}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6038750841747824185
 GameObject:
@@ -127,7 +140,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7578002894438219016}
-  - {fileID: 3974513919653453788}
   - {fileID: 1185724144499194546}
   - {fileID: 9045346031154979461}
   m_Father: {fileID: 0}
@@ -164,7 +176,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3974513919653453788}
   m_Father: {fileID: 8496435470261094243}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8176895210999917865
@@ -312,3 +325,4 @@ MonoBehaviour:
   TowerRange: 0
   TowerDamage: 0
   TowerAttackSpeed: 0
+  SphereCollider: {fileID: 0}
