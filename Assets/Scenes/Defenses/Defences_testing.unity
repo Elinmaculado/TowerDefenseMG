@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &242356703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6371027358392594271, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+  m_PrefabInstance: {fileID: 740178870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &398556552
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +241,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 870025840647804400, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 1844055827}
     - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: TowerRange
       value: 10
@@ -264,10 +273,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.91
       objectReference: {fileID: 0}
+    - target: {fileID: 5195743066873070387, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: m_Constraints
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 6864500678434155522, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_Name
       value: Simple_Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: torret
+      value: 
+      objectReference: {fileID: 242356703}
     - target: {fileID: 8747976268558349656, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04
@@ -883,6 +900,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 63.349, y: 0, z: 0}
+--- !u!1 &1844055827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9110731119767927335, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+  m_PrefabInstance: {fileID: 740178870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923391020
 GameObject:
   m_ObjectHideFlags: 0
