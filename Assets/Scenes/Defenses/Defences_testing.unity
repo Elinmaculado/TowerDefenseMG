@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &38194067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2518301008323345348, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+  m_PrefabInstance: {fileID: 740178870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &242356703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6371027358392594271, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
@@ -261,33 +266,73 @@ PrefabInstance:
       propertyPath: TowerAttackSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2516527040062145531, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e9626cb5ee82914cb521dbc92b6c6db, type: 2}
     - target: {fileID: 2518301008323345348, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2761234905122905938, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e9626cb5ee82914cb521dbc92b6c6db, type: 2}
+    - target: {fileID: 4015676676970493599, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e9626cb5ee82914cb521dbc92b6c6db, type: 2}
     - target: {fileID: 4298164951040437735, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.76
+      value: -0.032
       objectReference: {fileID: 0}
     - target: {fileID: 4298164951040437735, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.91
+      value: 0.245
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298164951040437735, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 5195743066873070387, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_Constraints
-      value: 14
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796914144107360880, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e9626cb5ee82914cb521dbc92b6c6db, type: 2}
+    - target: {fileID: 6503341348783332351, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17299998
       objectReference: {fileID: 0}
     - target: {fileID: 6864500678434155522, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_Name
       value: Simple_Tower
       objectReference: {fileID: 0}
     - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: ammo
+      value: 
+      objectReference: {fileID: 2553002258986504070, guid: bd7bfbfd53e01194698d9e10d049adb0, type: 3}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: torret
       value: 
       objectReference: {fileID: 242356703}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 38194067}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: ShootTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8610539039521694642, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.173
+      objectReference: {fileID: 0}
     - target: {fileID: 8747976268558349656, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 8747976268558349656, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalPosition.y
@@ -295,7 +340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8747976268558349656, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.47
+      value: -0.362
       objectReference: {fileID: 0}
     - target: {fileID: 8747976268558349656, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalRotation.w
@@ -457,7 +502,7 @@ Transform:
   m_GameObject: {fileID: 753711987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.98, y: 1, z: -4.98}
+  m_LocalPosition: {x: -12.14, y: 0.5, z: -4.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -563,7 +608,7 @@ Transform:
   m_GameObject: {fileID: 764381943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.95, y: 1, z: -2.81}
+  m_LocalPosition: {x: -0.03, y: 0.5, z: -11.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

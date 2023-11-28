@@ -8,16 +8,27 @@ public class Enemy_Detector : MonoBehaviour
     // public
 
     // private
-
+    private float indextime;
     //private modificables en editor
-    [SerializeField] private GameObject torret;
+    [SerializeField] private GameObject torret,spawner;
     [SerializeField] private List<GameObject> Enemylist;
-
+    [SerializeField] private GameObject ammo;
+    [SerializeField] private float ShootTime;
     private void Update()
     {
         if (Enemylist.Count > 0 )
         {
             apuntar();
+            if(indextime > ShootTime)
+            {
+                DisparaNegro();
+                indextime = 0;
+            }
+            indextime += Time.deltaTime;
+        }
+        else
+        {
+            indextime = 0;
         }
     }
 
@@ -27,6 +38,10 @@ public class Enemy_Detector : MonoBehaviour
         torret.transform.LookAt(Enemylist[0].transform.position);
     }
 
+    void DisparaNegro()
+    {
+        Instantiate(ammo, spawner.transform);
+    }
 
     // list enter and exit
     private void OnTriggerEnter(Collider other)
