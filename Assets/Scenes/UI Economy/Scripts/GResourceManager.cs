@@ -17,7 +17,7 @@ public class GResourceManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        TextoRecurso.text = "Dinero: $" + RecursosActuales;
+        TextoRecurso.text = "Cash: $" + RecursosActuales;
     }
 
     public void AddResources(float valor)
@@ -30,5 +30,8 @@ public class GResourceManager : MonoBehaviour
         RecursosActuales -= valor;
         UpdateUI();
     }
-
+    public float CurrentResources()
+    {
+        return RecursosActuales;
+    }
 }
