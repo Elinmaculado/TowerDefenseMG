@@ -2,35 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy_Movement : MonoBehaviour
+public class EnemyBehavior : MonoBehaviour
 {
+    //Variables de movimiento
     public List<Transform> waypoints = new List<Transform>();
     public float movementSpeed;
     public float rotationSpeed;
+
     private int TargetIndex = 1;
     private Animator animator;
     private bool finalWaypoint;
+
+
+    //Variables de vida
+    public float maxLife;
+    public Image fillImage;
+
+    private float currentLife;
     private bool isDead;
+    private Transform canvasRoot;
+    private Quaternion lifeRotation;
+
     void Awake()
     {
+        canvasRoot = fillImage.transform.parent.parent;
+        lifeRotation = canvasRoot.rotation;
         //El animator accede al componente para poder manipular los booleanos
         animator = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        currentLife = maxLife;
     }
 
     // Update is called once per frame
     void Update()
     {
+        canvasRoot.transform.rotation = lifeRotation;
         Movement();
         LookAt();
-    
+
         if (Input.GetKeyDown(KeyCode.D))
         {
-            isDead = true;
+            TakeDamage(10);
         }
-    
+
     }
 
+    #region Movement;
     private void Movement()
     {
         if (isDead)
@@ -44,10 +66,10 @@ public class Enemy_Movement : MonoBehaviour
         var distance = Vector3.Distance(transform.position, waypoints[TargetIndex].position);
 
         //Se cambia de waypoint una vez está cerca del waypoint actual
-        if (distance <= 0.1f) 
+        if (distance <= 0.1f)
         {
             //Como es una lista que empieza en 0 el último es waypoint -1
-            if (TargetIndex >= waypoints.Count-1) 
+            if (TargetIndex >= waypoints.Count - 1)
             {
                 Debug.Log("El enemigo llegó al final");
                 animator.SetBool("IsAttacking", true);
@@ -80,4 +102,33 @@ public class Enemy_Movement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rootTarget, rotationSpeed * Time.deltaTime);
         }
     }
+    #endregion
+
+    #region Life
+    public void TakeDamage(float damage)
+    {
+        var newLife = currentLife - damage;
+        if (newLife <= 0)
+        {
+            onDead();
+        }
+        else
+        {
+            currentLife = newLife;
+            var fillValue = currentLife * 1 / 100;
+            fillImage.fillAmount = fillValue;
+        }
+
+    }
+
+    void onDead()
+    {
+        isDead = true;
+        animator.SetBool("IsDead", true);
+        currentLife = 0;
+        fillImage.fillAmount = 0;
+        //Destroy(gameObject);
+    }
+
+    #endregion
 }
