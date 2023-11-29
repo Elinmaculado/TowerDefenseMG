@@ -1,0 +1,83 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using UnityEngine;
+
+public class Enemy_Movement : MonoBehaviour
+{
+    public List<Transform> waypoints = new List<Transform>();
+    public float movementSpeed;
+    public float rotationSpeed;
+    private int TargetIndex = 1;
+    private Animator animator;
+    private bool finalWaypoint;
+    private bool isDead;
+    void Awake()
+    {
+        //El animator accede al componente para poder manipular los booleanos
+        animator = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Movement();
+        LookAt();
+    
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            isDead = true;
+        }
+    
+    }
+
+    private void Movement()
+    {
+        if (isDead)
+        {
+            animator.SetBool("IsDead", true);
+            return;
+        }
+        //Move towards el waypoint siguiente
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[TargetIndex].position, movementSpeed * Time.deltaTime);
+        //Variable para calcular la distancia entre el personaje y waypoint
+        var distance = Vector3.Distance(transform.position, waypoints[TargetIndex].position);
+
+        //Se cambia de waypoint una vez está cerca del waypoint actual
+        if (distance <= 0.1f) 
+        {
+            //Como es una lista que empieza en 0 el último es waypoint -1
+            if (TargetIndex >= waypoints.Count-1) 
+            {
+                Debug.Log("El enemigo llegó al final");
+                animator.SetBool("IsAttacking", true);
+                finalWaypoint = true;
+                return;
+            }
+            else
+            {
+                //Si aun no llega al final se va al siguiente punto
+                TargetIndex++;
+            }
+        }
+    }
+
+    private void LookAt()
+    {
+        if (isDead)
+        {
+            return;
+        }
+        //Metodo brusco
+        //transform.LookAt(waypoints[TargetIndex]);
+
+        //metodo mas suave
+        //Cuando llega al último punto ya no necesita rotar
+        if (!finalWaypoint)
+        {
+            var dir = waypoints[TargetIndex].position - transform.position;
+            var rootTarget = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rootTarget, rotationSpeed * Time.deltaTime);
+        }
+    }
+}
