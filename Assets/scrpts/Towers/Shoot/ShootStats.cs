@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class ShootStats : MonoBehaviour
 {
-    [SerializeField] GameObject stats;
-    void Start()
-    {
+    [SerializeField] public float speed;
+    [SerializeField] float damage;
 
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

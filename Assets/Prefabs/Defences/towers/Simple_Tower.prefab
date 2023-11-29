@@ -481,7 +481,7 @@ PrefabInstance:
     - target: {fileID: 7921717974883464864, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: ammo
       value: 
-      objectReference: {fileID: 2553002258986504070, guid: bd7bfbfd53e01194698d9e10d049adb0, type: 3}
+      objectReference: {fileID: 2353704261949105254, guid: 103dd5b37d1ae5f4cae50cf2d5989a23, type: 3}
     - target: {fileID: 7921717974883464864, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: torret
       value: 

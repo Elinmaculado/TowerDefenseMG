@@ -11,17 +11,28 @@ public class Enemy_Detector : MonoBehaviour
     private float indextime;
     //private modificables en editor
     [SerializeField] private GameObject torret,spawner;
-    [SerializeField] private List<GameObject> Enemylist;
+    [SerializeField] public List<GameObject> Enemylist;
     [SerializeField] private GameObject ammo;
-    [SerializeField] private float ShootTime;
+    [SerializeField] Tower_Stats ts;
+
+    private void Start()
+    {
+        ts.GetComponent<Tower_Stats>();
+    }
     private void Update()
     {
         if (Enemylist.Count > 0 )
         {
             apuntar();
-            if(indextime > ShootTime)
+            if(indextime > ts.TowerAttackSpeed)
             {
-                DisparaNegro();
+                GameObject BalaTemp = Instantiate(ammo, spawner.transform.position, spawner.transform.rotation) as GameObject;
+                
+                Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
+
+                rb.AddForce((Enemylist[0].transform.position-transform.position) * ts.ammoSpeed);
+
+                Destroy(BalaTemp, 5.0f);
                 indextime = 0;
             }
             indextime += Time.deltaTime;
@@ -30,17 +41,14 @@ public class Enemy_Detector : MonoBehaviour
         {
             indextime = 0;
         }
+
     }
 
     // apuntado
     void apuntar()
     {
         torret.transform.LookAt(Enemylist[0].transform.position);
-    }
-
-    void DisparaNegro()
-    {
-        Instantiate(ammo, spawner.transform);
+        spawner.transform.LookAt(Enemylist[0].transform.position);
     }
 
     // list enter and exit
