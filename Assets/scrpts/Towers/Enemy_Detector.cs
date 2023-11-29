@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy_Detector : MonoBehaviour
 {
     // public
-
+    public bool close;
     // private
     private float indextime;
     //private modificables en editor
@@ -28,6 +28,8 @@ public class Enemy_Detector : MonoBehaviour
             {
                 GameObject BalaTemp = Instantiate(ammo, spawner.transform.position, spawner.transform.rotation) as GameObject;
                 
+                BalaTemp.GetComponent<Shoot_Stats>().damage = ts.TowerDamage;
+
                 Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
 
                 rb.AddForce((Enemylist[0].transform.position-transform.position) * ts.ammoSpeed);
@@ -47,8 +49,7 @@ public class Enemy_Detector : MonoBehaviour
     // apuntado
     void apuntar()
     {
-        torret.transform.LookAt(Enemylist[0].transform.position);
-        spawner.transform.LookAt(Enemylist[0].transform.position);
+            torret.transform.LookAt(Enemylist[0].transform.position);
     }
 
     // list enter and exit

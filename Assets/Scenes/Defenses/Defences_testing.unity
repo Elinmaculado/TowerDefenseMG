@@ -268,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 1210174356}
     - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: TowerAttackSpeed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2516527040062145531, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -616,7 +616,7 @@ Transform:
   m_GameObject: {fileID: 764381943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.24, y: 0.8, z: -1.93}
+  m_LocalPosition: {x: -5.6, y: 0.8, z: -1.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -843,7 +843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1408782191
 Transform:
   m_ObjectHideFlags: 0
