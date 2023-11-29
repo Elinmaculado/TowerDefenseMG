@@ -5,13 +5,14 @@ using UnityEngine;
 public class Tower_Stats : MonoBehaviour
 {
     // public 
-    int TowerPrice;
+    public int TowerPrice;
     public float TowerRange;
+    public int ammoSpeed;
     // private
 
     // private modificables en editor
     [SerializeField] private float TowerDamage;
-    [SerializeField] private float TowerAttackSpeed;
+    [SerializeField] public float TowerAttackSpeed;
     [SerializeField] private SphereCollider SphereCollider;
 
     public void Tower_Upgrade()
