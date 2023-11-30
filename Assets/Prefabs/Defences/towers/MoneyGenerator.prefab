@@ -253,9 +253,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5341066191748737197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a1cb59a3c609740babd87d34d87e21, type: 3}
+  m_Script: {fileID: 11500000, guid: 7784c01bcea7a2241b616627abbc6f89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ResourceManager: {fileID: 0}
-  MoneyAmount: 1
-  GenerationSpeed: 1.5
+  MoneyAmount: 25
+  GenerationSpeed: 5
