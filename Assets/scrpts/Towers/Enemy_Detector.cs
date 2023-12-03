@@ -27,7 +27,9 @@ public class Enemy_Detector : MonoBehaviour
             if(indextime > ts.TowerAttackSpeed)
             {
                 GameObject BalaTemp = Instantiate(ammo, spawner.transform.position, spawner.transform.rotation) as GameObject;
-                
+
+                BalaTemp.GetComponent<ShootStats>().damage = ts.TowerDamage;
+
                 Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
 
                 rb.AddForce((Enemylist[0].transform.position-transform.position) * ts.ammoSpeed);
