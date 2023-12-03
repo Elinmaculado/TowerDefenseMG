@@ -51,7 +51,7 @@ public class EnemyBehavior : MonoBehaviour
         }
 
     }
-
+ 
     #region Movement;
     private void Movement()
     {
@@ -121,7 +121,7 @@ public class EnemyBehavior : MonoBehaviour
 
     }
 
-    void onDead()
+    public void onDead()
     {
         isDead = true;
         animator.SetBool("IsDead", true);
@@ -129,6 +129,11 @@ public class EnemyBehavior : MonoBehaviour
         fillImage.fillAmount = 0;
 
         Destroy(gameObject, 1f);
+    }
+
+    public void test()
+    {
+        Debug.Log("Puta");
     }
 
     #endregion

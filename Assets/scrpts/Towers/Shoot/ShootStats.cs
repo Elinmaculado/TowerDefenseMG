@@ -5,6 +5,6 @@ using UnityEngine;
 public class ShootStats : MonoBehaviour
 {
     [SerializeField] public float speed;
-    [SerializeField] float damage;
+    [SerializeField] public float damage;
 
 }
