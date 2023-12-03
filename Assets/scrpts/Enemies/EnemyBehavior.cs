@@ -127,7 +127,8 @@ public class EnemyBehavior : MonoBehaviour
         animator.SetBool("IsDead", true);
         currentLife = 0;
         fillImage.fillAmount = 0;
-        //Destroy(gameObject);
+
+        Destroy(gameObject, 1f);
     }
 
     #endregion
