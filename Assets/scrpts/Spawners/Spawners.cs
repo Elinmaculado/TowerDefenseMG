@@ -77,8 +77,7 @@ public class Spawners : MonoBehaviour
                         (levelEnemies[enemyTypeQueue.Peek()].enemieType, 
                         spawnPositions[spawnPositionQueue.Peek()].transform.position, 
                         levelEnemies[enemyTypeQueue.Peek()].enemieType.transform.rotation);
-            enemyToSpwan.GetComponent<Enemy_Movement>().waypoints = spawnPositions[spawnPositionQueue.Peek()].GetComponent<Enemy_Movement>().waypoints;
-            Instantiate(enemyToSpwan);
+            enemyToSpwan.GetComponent<EnemyBehavior>().waypoints = spawnPositions[spawnPositionQueue.Peek()].GetComponent<EnemyBehavior>().waypoints;
             spawnPositionQueue.Dequeue();
             enemyTypeQueue.Dequeue();
             spawnIndex++;   

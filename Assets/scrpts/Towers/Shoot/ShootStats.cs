@@ -11,7 +11,7 @@ public class ShootStats : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject, .5f);
+            Destroy(this.gameObject);   
         }
     }
 }

@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
-    [SerializeField] GameObject[] turrets;
+    [SerializeField] List<GameObject> turrets;
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class BuildManager : MonoBehaviour
     }
 
 
-    private GameObject turretBuild;
+    public GameObject turretBuild;
 
     public GameObject GetTurretToBuild()
     {
