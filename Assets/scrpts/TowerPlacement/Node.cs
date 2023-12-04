@@ -21,8 +21,7 @@ public class Node : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        GetComponent<Renderer>().material.color = hoverColor;
-          
+        GetComponent<Renderer>().material.color = hoverColor;    
     }
 
     private void OnMouseExit()
