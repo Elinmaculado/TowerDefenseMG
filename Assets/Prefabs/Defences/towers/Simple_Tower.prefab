@@ -432,7 +432,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 86584046067807719, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: ammoSpeed
-      value: 5
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 86584046067807719, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: TowerPrice
@@ -453,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 86584046067807719, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: TowerAttackSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 338988403498862456, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3127028476212555981, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_Materials.Array.data[0]

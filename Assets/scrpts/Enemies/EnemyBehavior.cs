@@ -21,7 +21,7 @@ public class EnemyBehavior : MonoBehaviour
     public Image fillImage;
 
     private float currentLife;
-    private bool isDead;
+    public bool isDead;
     private Transform canvasRoot;
     private Quaternion lifeRotation;
 
@@ -127,13 +127,12 @@ public class EnemyBehavior : MonoBehaviour
         animator.SetBool("IsDead", true);
         currentLife = 0;
         fillImage.fillAmount = 0;
-
         Destroy(gameObject, 2f);
     }
 
     public void test()
     {
-        Debug.Log("Puta");
+        Debug.Log("test");
     }
 
     #endregion

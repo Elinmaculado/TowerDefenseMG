@@ -21,29 +21,35 @@ public class Enemy_Detector : MonoBehaviour
     }
     private void Update()
     {
-        if (Enemylist.Count > 0 )
+        if (Enemylist.Count > 0)
         {
-            apuntar();
-            if(indextime > ts.TowerAttackSpeed)
-            {
-                GameObject BalaTemp = Instantiate(ammo, spawner.transform.position, spawner.transform.rotation) as GameObject;
+            if (!Enemylist[0].GetComponentInParent<EnemyBehavior>().isDead) 
+            { 
+                 apuntar();
+                if (indextime > ts.TowerAttackSpeed)
+                {
+                    GameObject BalaTemp = Instantiate(ammo, spawner.transform.position, spawner.transform.rotation) as GameObject;
 
-                BalaTemp.GetComponent<ShootStats>().damage = ts.TowerDamage;
+                    BalaTemp.GetComponent<ShootStats>().damage = ts.TowerDamage;
 
-                Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
+                    Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
 
-                rb.AddForce((Enemylist[0].transform.position-transform.position) * ts.ammoSpeed);
+                    rb.AddForce((Enemylist[0].transform.position - transform.position) * ts.ammoSpeed);
 
-                Destroy(BalaTemp, 5.0f);
-                indextime = 0;
+                    Destroy(BalaTemp, 5.0f);
+                    indextime = 0;
+                }
+                indextime += Time.deltaTime;
+            
             }
-            indextime += Time.deltaTime;
+             else
+             {
+                Enemylist.RemoveAt(0);
+             }
+           
         }
-        else
-        {
-            indextime = 0;
-        }
-
+       
+        
     }
 
     // apuntado
@@ -68,4 +74,5 @@ public class Enemy_Detector : MonoBehaviour
             Enemylist.Remove(other.gameObject);
         }
     }
+
 }
