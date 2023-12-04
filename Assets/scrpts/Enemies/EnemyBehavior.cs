@@ -128,7 +128,7 @@ public class EnemyBehavior : MonoBehaviour
         currentLife = 0;
         fillImage.fillAmount = 0;
 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 2f);
     }
 
     public void test()
