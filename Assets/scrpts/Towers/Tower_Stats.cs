@@ -11,7 +11,7 @@ public class Tower_Stats : MonoBehaviour
     // private
 
     // private modificables en editor
-    [SerializeField] private float TowerDamage;
+    [SerializeField] public float TowerDamage;
     [SerializeField] public float TowerAttackSpeed;
     [SerializeField] private SphereCollider SphereCollider;
 
