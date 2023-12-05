@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 338988403498862456, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6038750841747824185, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_Name
-      value: Tower_default
+      value: Canon_Tower
       objectReference: {fileID: 0}
     - target: {fileID: 8496435470261094243, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_LocalPosition.x
