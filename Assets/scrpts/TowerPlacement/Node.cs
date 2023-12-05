@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using UnityEngine;
 
 public class Node : MonoBehaviour
@@ -11,6 +12,7 @@ public class Node : MonoBehaviour
     private Renderer originalRenderer;
     private Color startColor;
 
+    public GResourceManager ResourceCostManager;
    
 
 
@@ -18,6 +20,7 @@ public class Node : MonoBehaviour
     {
         originalRenderer = GetComponent<Renderer>();
         startColor = originalRenderer.material.color;
+        ResourceCostManager = FindAnyObjectByType<GResourceManager>();
     }
     private void OnMouseEnter()
     {
@@ -37,9 +40,22 @@ public class Node : MonoBehaviour
         }
         else
         {
-            Debug.Log("No turret in here");
-            GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-            turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
+            if (BuildManager.instance.GetTurretToBuild().GetComponentInChildren<Tower_Stats>().TowerPrice <= ResourceCostManager.RecursosActuales)
+            {
+                Debug.Log("Hay varo");
+
+                Debug.Log("No turret in here");
+
+                GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+                turret = (GameObject)Instantiate(turretToBuild, transform.position, transform.rotation);
+
+                ResourceCostManager.RemoveResources(BuildManager.instance.GetTurretToBuild().GetComponentInChildren<Tower_Stats>().TowerPrice);
+            }
+            else
+            {
+                Debug.Log("No hay varo");
+            }
+
         }
     }
 }
