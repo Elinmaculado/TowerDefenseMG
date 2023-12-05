@@ -332,10 +332,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  movementSpeed: 1
+  movementSpeed: 2
   rotationSpeed: 10
   maxLife: 100
   fillImage: {fileID: 192209080268516809}
+  isDead: 0
 --- !u!1 &7664308509592089196
 GameObject:
   m_ObjectHideFlags: 0

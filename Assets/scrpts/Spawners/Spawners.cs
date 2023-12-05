@@ -11,15 +11,15 @@ public class Spawners : MonoBehaviour
     
     public int totalOfEnemies = 0;
 
-    public Queue<int> enemyTypeQueue = new();
-    public Queue<int> spawnPositionQueue = new();
+    private Queue<int> enemyTypeQueue = new();
+    private Queue<int> spawnPositionQueue = new();
+    private Queue<float> delayTime = new();
 
-    int spawnIndex = 0;
-
-
-    public float spawnDelay = 1.0f;
+    #region Spawn Times
     public float firstSpawnDelay = 5.0f;
-
+    float minDelayTime = 5.0f;
+    float maxDelayTime = 7.0f;
+    #endregion
 
     [System.Serializable]
     public class Enemie { 
@@ -33,7 +33,7 @@ public class Spawners : MonoBehaviour
     {
         
         GenerateEnemyQueue();
-       StartCoroutine(FirstEnemyDelay());
+        StartCoroutine(SpawnEnemyDelay());
     }
 
     private void GenerateEnemyQueue()
@@ -46,6 +46,9 @@ public class Spawners : MonoBehaviour
         {
             totalOfEnemies += tmpEnemies[i].enemyAmount;
         }
+
+        //Generate delay time queue
+        GenerateRandomDelays(); 
 
         //Generates enemy type queue
         for (int i = 0; i < totalOfEnemies; i++)
@@ -79,8 +82,7 @@ public class Spawners : MonoBehaviour
                         levelEnemies[enemyTypeQueue.Peek()].enemieType.transform.rotation);
             enemyToSpwan.GetComponent<EnemyBehavior>().waypoints = spawnPositions[spawnPositionQueue.Peek()].GetComponent<EnemyBehavior>().waypoints;
             spawnPositionQueue.Dequeue();
-            enemyTypeQueue.Dequeue();
-            spawnIndex++;   
+            enemyTypeQueue.Dequeue(); 
             StartCoroutine(SpawnEnemyDelay());
             totalOfEnemies--;
         }
@@ -90,16 +92,24 @@ public class Spawners : MonoBehaviour
 
     }
 
+    void GenerateRandomDelays()
+    {
+        delayTime.Enqueue(firstSpawnDelay);
+        for(int i = 0; i<totalOfEnemies;i++)
+        {
+            delayTime.Enqueue(UnityEngine.Random.Range(minDelayTime,maxDelayTime));
+            minDelayTime -= minDelayTime > 1.0f ? 0.4f : 0;
+            maxDelayTime -= maxDelayTime > 1.5f ? 0.2f : 0;
+        }
+    }
+
     IEnumerator SpawnEnemyDelay()
     {
-        yield return new WaitForSeconds(spawnDelay);
+        yield return new WaitForSeconds(delayTime.Peek());
+        delayTime.Dequeue();
         SpawnEnemy();
       
     }
 
-    IEnumerator FirstEnemyDelay()
-    {
-        yield return new WaitForSeconds(firstSpawnDelay);
-        SpawnEnemy();
-    }
+  
 }
