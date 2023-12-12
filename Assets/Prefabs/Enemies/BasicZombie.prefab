@@ -337,6 +337,7 @@ MonoBehaviour:
   maxLife: 100
   fillImage: {fileID: 192209080268516809}
   isDead: 0
+  damage: 10
 --- !u!1 &7664308509592089196
 GameObject:
   m_ObjectHideFlags: 0

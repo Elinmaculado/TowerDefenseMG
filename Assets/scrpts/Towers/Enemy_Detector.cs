@@ -23,7 +23,7 @@ public class Enemy_Detector : MonoBehaviour
     {
         if (Enemylist.Count > 0)
         {
-            if (!Enemylist[0].GetComponentInParent<EnemyBehavior>().isDead) 
+            if (!(Enemylist[0].GetComponentInParent<EnemyBehavior>().isDead)) 
             { 
                  apuntar();
                 if (indextime > ts.TowerAttackSpeed)

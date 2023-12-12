@@ -25,6 +25,9 @@ public class EnemyBehavior : MonoBehaviour
     private Transform canvasRoot;
     private Quaternion lifeRotation;
 
+    public float damage;
+
+
     void Awake()
     {
         canvasRoot = fillImage.transform.parent.parent;
@@ -48,6 +51,10 @@ public class EnemyBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             TakeDamage(10);
+        }
+        if (finalWaypoint)
+        {
+            BaseHP.instance.TakeDamage(damage * Time.deltaTime);
         }
 
     }
@@ -115,7 +122,7 @@ public class EnemyBehavior : MonoBehaviour
         else
         {
             currentLife = newLife;
-            var fillValue = currentLife * 1 / 100;
+            var fillValue = currentLife * 1 / maxLife;
             fillImage.fillAmount = fillValue;
         }
 
