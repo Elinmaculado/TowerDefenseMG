@@ -33,7 +33,7 @@ public class BaseHP : MonoBehaviour
         float newLife = currentLife - damage;
         if (newLife <= 0)
         {
-            Debug.Log("game over");
+            GameManager.instance.GameOver();
         }
         else
         {

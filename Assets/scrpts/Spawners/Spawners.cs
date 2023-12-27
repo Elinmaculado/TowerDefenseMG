@@ -47,6 +47,8 @@ public class Spawners : MonoBehaviour
             totalOfEnemies += tmpEnemies[i].enemyAmount;
         }
 
+        GameManager.instance.totalOffEnemies = totalOfEnemies;
+
         //Generate delay time queue
         GenerateRandomDelays(); 
 
@@ -80,16 +82,12 @@ public class Spawners : MonoBehaviour
                         (levelEnemies[enemyTypeQueue.Peek()].enemieType, 
                         spawnPositions[spawnPositionQueue.Peek()].transform.position, 
                         levelEnemies[enemyTypeQueue.Peek()].enemieType.transform.rotation);
-            enemyToSpwan.GetComponent<EnemyBehavior>().waypoints = spawnPositions[spawnPositionQueue.Peek()].GetComponent<EnemyBehavior>().waypoints;
+            enemyToSpwan.GetComponent<EnemyBehavior>().waypoints = spawnPositions[spawnPositionQueue.Peek()].GetComponent<WayPoints>().wayPoints;
             spawnPositionQueue.Dequeue();
             enemyTypeQueue.Dequeue(); 
             StartCoroutine(SpawnEnemyDelay());
             totalOfEnemies--;
         }
-        else{
-            Debug.Log("Level cleared");
-        }
-
     }
 
     void GenerateRandomDelays()

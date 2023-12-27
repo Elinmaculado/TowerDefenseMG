@@ -52,7 +52,7 @@ public class EnemyBehavior : MonoBehaviour
         {
             TakeDamage(10);
         }
-        if (finalWaypoint)
+        if (finalWaypoint && !isDead)
         {
             BaseHP.instance.TakeDamage(damage * Time.deltaTime);
         }
@@ -115,7 +115,7 @@ public class EnemyBehavior : MonoBehaviour
     public void TakeDamage(float damage)
     {
         var newLife = currentLife - damage;
-        if (newLife <= 0)
+        if (newLife <= 0 && !isDead)
         {
             onDead();
         }
@@ -134,6 +134,7 @@ public class EnemyBehavior : MonoBehaviour
         animator.SetBool("IsDead", true);
         currentLife = 0;
         fillImage.fillAmount = 0;
+        GameManager.instance.IsLevelCleared();
         Destroy(gameObject, 2f);
     }
 
