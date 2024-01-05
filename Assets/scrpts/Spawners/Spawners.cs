@@ -7,17 +7,20 @@ using UnityEngine;
 public class Spawners : MonoBehaviour
 {   
     [SerializeField]  List<Enemie> levelEnemies;
-    [SerializeField] Transform[] spawnPositions;
+    [SerializeField] List<Transform> spawnPositions;
     
     public int totalOfEnemies = 0;
 
-    public List<int> enemyTypeQueue = new();
-    public List<int> spawnPositionQueue = new();
+    private Queue<int> enemyTypeQueue = new();
+    private Queue<int> spawnPositionQueue = new();
+    private Queue<float> delayTime = new();
 
-    int spawnIndex = 0;
+    #region Spawn Times
+    public float firstSpawnDelay = 5.0f;
+    float minDelayTime = 5.0f;
+    float maxDelayTime = 7.0f;
+    #endregion
 
-
-    public float spawnDelay = 1.0f;
     [System.Serializable]
     public class Enemie { 
         public GameObject enemieType;
@@ -30,7 +33,7 @@ public class Spawners : MonoBehaviour
     {
         
         GenerateEnemyQueue();
-        SpawnEnemy();   
+        StartCoroutine(SpawnEnemyDelay());
     }
 
     private void GenerateEnemyQueue()
@@ -44,11 +47,16 @@ public class Spawners : MonoBehaviour
             totalOfEnemies += tmpEnemies[i].enemyAmount;
         }
 
+        GameManager.instance.totalOffEnemies = totalOfEnemies;
+
+        //Generate delay time queue
+        GenerateRandomDelays(); 
+
         //Generates enemy type queue
         for (int i = 0; i < totalOfEnemies; i++)
         {
             int enemyIndex = UnityEngine.Random.Range(0, tmpEnemies.Count);
-            enemyTypeQueue.Add(enemyIndex);
+            enemyTypeQueue.Enqueue(enemyIndex);
             tmpEnemies[enemyIndex].enemyAmount--;
             if (tmpEnemies[enemyIndex].enemyAmount <= 0)//Deletes enemy from pool once al of them where queued
             {
@@ -59,7 +67,7 @@ public class Spawners : MonoBehaviour
         //Generate spawn position queue
         for (int j = 0; j < totalOfEnemies; j++)
         {
-            spawnPositionQueue.Add(UnityEngine.Random.Range(0, spawnPositions.Length));
+            spawnPositionQueue.Enqueue(UnityEngine.Random.Range(0, spawnPositions.Count));
         }
 
         
@@ -70,23 +78,36 @@ public class Spawners : MonoBehaviour
 
         if(totalOfEnemies > 0)
         {
-            Instantiate(levelEnemies[enemyTypeQueue[spawnIndex]].enemieType, 
-                        spawnPositions[spawnPositionQueue[spawnIndex]].transform.position, 
-                        levelEnemies[enemyTypeQueue[spawnIndex]].enemieType.transform.rotation);
-            spawnIndex++;   
+            GameObject enemyToSpwan = (GameObject)Instantiate
+                        (levelEnemies[enemyTypeQueue.Peek()].enemieType, 
+                        spawnPositions[spawnPositionQueue.Peek()].transform.position, 
+                        levelEnemies[enemyTypeQueue.Peek()].enemieType.transform.rotation);
+            enemyToSpwan.GetComponent<EnemyBehavior>().waypoints = spawnPositions[spawnPositionQueue.Peek()].GetComponent<WayPoints>().wayPoints;
+            spawnPositionQueue.Dequeue();
+            enemyTypeQueue.Dequeue(); 
             StartCoroutine(SpawnEnemyDelay());
             totalOfEnemies--;
         }
-        else{
-            Debug.Log("Level cleared");
-        }
+    }
 
+    void GenerateRandomDelays()
+    {
+        delayTime.Enqueue(firstSpawnDelay);
+        for(int i = 0; i<totalOfEnemies;i++)
+        {
+            delayTime.Enqueue(UnityEngine.Random.Range(minDelayTime,maxDelayTime));
+            minDelayTime -= minDelayTime > 1.0f ? 0.4f : 0;
+            maxDelayTime -= maxDelayTime > 1.5f ? 0.2f : 0;
+        }
     }
 
     IEnumerator SpawnEnemyDelay()
     {
-        yield return new WaitForSeconds(spawnDelay);
+        yield return new WaitForSeconds(delayTime.Peek());
+        delayTime.Dequeue();
         SpawnEnemy();
       
     }
+
+  
 }

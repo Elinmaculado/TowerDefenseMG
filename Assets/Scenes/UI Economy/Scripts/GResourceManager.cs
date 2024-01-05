@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class GResourceManager : MonoBehaviour
 {
     public Text TextoRecurso;
-    private float RecursosActuales;
+    public float RecursosActuales = 0f;
     // Start is called before the first frame update
     void Start()
     {
-        RecursosActuales = 0f;
         UpdateUI();
     }
 

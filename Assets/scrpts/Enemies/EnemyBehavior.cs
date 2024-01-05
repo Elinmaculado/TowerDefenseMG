@@ -21,9 +21,12 @@ public class EnemyBehavior : MonoBehaviour
     public Image fillImage;
 
     private float currentLife;
-    private bool isDead;
+    public bool isDead;
     private Transform canvasRoot;
     private Quaternion lifeRotation;
+
+    public float damage;
+
 
     void Awake()
     {
@@ -48,6 +51,10 @@ public class EnemyBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             TakeDamage(10);
+        }
+        if (finalWaypoint && !isDead)
+        {
+            BaseHP.instance.TakeDamage(damage * Time.deltaTime);
         }
 
     }
@@ -108,14 +115,14 @@ public class EnemyBehavior : MonoBehaviour
     public void TakeDamage(float damage)
     {
         var newLife = currentLife - damage;
-        if (newLife <= 0)
+        if (newLife <= 0 && !isDead)
         {
             onDead();
         }
         else
         {
             currentLife = newLife;
-            var fillValue = currentLife * 1 / 100;
+            var fillValue = currentLife * 1 / maxLife;
             fillImage.fillAmount = fillValue;
         }
 
@@ -127,13 +134,13 @@ public class EnemyBehavior : MonoBehaviour
         animator.SetBool("IsDead", true);
         currentLife = 0;
         fillImage.fillAmount = 0;
-
+        GameManager.instance.IsLevelCleared();
         Destroy(gameObject, 2f);
     }
 
     public void test()
     {
-        Debug.Log("Puta");
+        Debug.Log("test");
     }
 
     #endregion
