@@ -14,6 +14,7 @@ public class EnemyBehavior : MonoBehaviour
     private int TargetIndex = 1;
     private Animator animator;
     private bool finalWaypoint;
+    public float destroyTime;
 
 
     //Variables de vida
@@ -134,8 +135,8 @@ public class EnemyBehavior : MonoBehaviour
         animator.SetBool("IsDead", true);
         currentLife = 0;
         fillImage.fillAmount = 0;
+        Destroy(gameObject, destroyTime);
         GameManager.instance.IsLevelCleared();
-        Destroy(gameObject, 2f);
     }
 
     public void test()

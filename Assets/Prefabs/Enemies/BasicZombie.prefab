@@ -334,6 +334,7 @@ MonoBehaviour:
   - {fileID: 0}
   movementSpeed: 2
   rotationSpeed: 10
+  destroyTime: 2
   maxLife: 100
   fillImage: {fileID: 192209080268516809}
   isDead: 0
