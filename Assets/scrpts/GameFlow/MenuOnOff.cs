@@ -20,4 +20,14 @@ public class MenuOnOff : MonoBehaviour
         }
         
     }
+
+    public void Pause()
+    {
+        Time.timeScale = 0.0f;
+    }
+
+    public void UnPuause()
+    {
+        Time.timeScale = 1.0f;
+    }
 }
