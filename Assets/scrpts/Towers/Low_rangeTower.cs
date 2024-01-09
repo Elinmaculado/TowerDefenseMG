@@ -9,8 +9,10 @@ public class Low_rangeTower : MonoBehaviour
     // private
     private float indextime;
     //private modificables en editor
-    [SerializeField] private GameObject torret, spawner;
+    [SerializeField] private GameObject torret;
     [SerializeField] public List<GameObject> Enemylist;
+    [SerializeField] private List<GameObject> spawnerlist;
+    [SerializeField] private List<Vector3> Direction;
     [SerializeField] private GameObject ammo;
     [SerializeField] Tower_Stats ts;
 
@@ -22,35 +24,20 @@ public class Low_rangeTower : MonoBehaviour
     {
         if (Enemylist.Count > 0)
         {
-            apuntar();
-            if (indextime > ts.TowerAttackSpeed)
+            if (!(Enemylist[0].GetComponentInParent<EnemyBehavior>().isDead))
             {
-                GameObject BalaTemp = Instantiate(ammo, spawner.transform.position, spawner.transform.rotation) as GameObject;
-
-                Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
-
-                rb.AddForce((Enemylist[0].transform.position - transform.position) * ts.ammoSpeed);
-
-                Destroy(BalaTemp, 5.0f);
-                indextime = 0;
+                attack();
             }
-            indextime += Time.deltaTime;
+            else
+            {
+                Enemylist.RemoveAt(0);
+            }
         }
         else
         {
             indextime = 0;
         }
-
     }
-
-    // apuntado
-    void apuntar()
-    {
-        torret.transform.LookAt(Enemylist[0].transform.position);
-        spawner.transform.LookAt(Enemylist[0].transform.position);
-    }
-
-    // list enter and exit
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -64,5 +51,24 @@ public class Low_rangeTower : MonoBehaviour
         {
             Enemylist.Remove(other.gameObject);
         }
+    }
+
+    private void attack()
+    {
+        if(indextime > ts.TowerAttackSpeed)
+        {
+            for (int i = 0; i < spawnerlist.Count; i++)
+            {
+                GameObject BalaTemp = Instantiate(ammo, spawnerlist[i].transform.position, spawnerlist[i].transform.rotation) as GameObject;
+
+                Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
+
+                rb.AddForce((Enemylist[0].transform.position - transform.position) * ts.ammoSpeed);
+
+                Destroy(BalaTemp, 5.0f);
+            }
+            indextime = 0;
+        }
+        indextime += Time.deltaTime;
     }
 }
