@@ -12,7 +12,6 @@ public class Low_rangeTower : MonoBehaviour
     [SerializeField] private GameObject torret;
     [SerializeField] public List<GameObject> Enemylist;
     [SerializeField] private List<GameObject> spawnerlist;
-    [SerializeField] private List<Vector3> Direction;
     [SerializeField] private GameObject ammo;
     [SerializeField] Tower_Stats ts;
 
@@ -63,7 +62,7 @@ public class Low_rangeTower : MonoBehaviour
 
                 Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
 
-                rb.AddForce((Enemylist[0].transform.position - transform.position) * ts.ammoSpeed);
+                rb.AddForce((spawnerlist[i].transform.position - transform.position) * ts.ammoSpeed);
 
                 Destroy(BalaTemp, 5.0f);
             }
