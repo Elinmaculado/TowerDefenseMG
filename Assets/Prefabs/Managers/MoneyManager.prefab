@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 2693247878021797575}
   - component: {fileID: 6952301112434239192}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MoneyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
