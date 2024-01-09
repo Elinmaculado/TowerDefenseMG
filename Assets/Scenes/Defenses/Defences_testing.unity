@@ -357,6 +357,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 759992076445337007, guid: 00af3e631941e0849b5814aa55bfd7ef, type: 3}
+      propertyPath: ammoSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 759992076445337007, guid: 00af3e631941e0849b5814aa55bfd7ef, type: 3}
+      propertyPath: TowerAttackSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6373262637774204529, guid: 00af3e631941e0849b5814aa55bfd7ef, type: 3}
       propertyPath: m_Name
       value: Aurelion_Tower

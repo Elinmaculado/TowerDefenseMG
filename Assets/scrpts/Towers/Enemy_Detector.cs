@@ -36,7 +36,7 @@ public class Enemy_Detector : MonoBehaviour
 
                     rb.AddForce((Enemylist[0].transform.position - transform.position) * ts.ammoSpeed);
 
-                    Destroy(BalaTemp, 5.0f);
+                    BalaTemp.GetComponent<ShootStats>().Boom();
                     indextime = 0;
                 }
                 indextime += Time.deltaTime;
