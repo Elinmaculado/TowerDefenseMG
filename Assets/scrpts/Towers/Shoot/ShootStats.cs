@@ -42,11 +42,6 @@ public class ShootStats : MonoBehaviour
         }
 
     }
-    IEnumerator AurelionTower()
-    {
-        yield return null;
-    }
-
     private void cannonExprosion()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
