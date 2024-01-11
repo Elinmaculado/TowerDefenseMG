@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Enemy_Detector : MonoBehaviour
 {
-    // public
-
     // private
     private float indextime;
     //private modificables en editor
@@ -36,20 +34,23 @@ public class Enemy_Detector : MonoBehaviour
 
                     rb.AddForce((Enemylist[0].transform.position - transform.position) * ts.ammoSpeed);
 
-                    Destroy(BalaTemp, 5.0f);
+                    BalaTemp.GetComponent<ShootStats>().Boom();
                     indextime = 0;
                 }
                 indextime += Time.deltaTime;
-            
             }
-             else
-             {
+            else
+            {
                 Enemylist.RemoveAt(0);
-             }
-           
+            }
+            for (int i = 0; i < Enemylist.Count; i++)
+            {
+                if (Enemylist[i].GetComponentInParent<EnemyBehavior>().isDead)
+                {
+                    Enemylist.RemoveAt(i);
+                }
+            }
         }
-       
-        
     }
 
     // apuntado
@@ -67,6 +68,7 @@ public class Enemy_Detector : MonoBehaviour
            Enemylist.Add(other.gameObject);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -74,5 +76,4 @@ public class Enemy_Detector : MonoBehaviour
             Enemylist.Remove(other.gameObject);
         }
     }
-
 }

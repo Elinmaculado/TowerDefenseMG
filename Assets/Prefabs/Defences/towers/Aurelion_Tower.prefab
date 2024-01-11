@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.399
       objectReference: {fileID: 0}
+    - target: {fileID: 6807931016095273492, guid: dbf8daf4d8093264885f16a0bd94da3e, type: 3}
+      propertyPath: ammo
+      value: 
+      objectReference: {fileID: 2796321895453612714, guid: 103dd5b37d1ae5f4cae50cf2d5989a23, type: 3}
     - target: {fileID: 6942521287096941197, guid: dbf8daf4d8093264885f16a0bd94da3e, type: 3}
       propertyPath: m_Name
       value: Aurelion_Tower
