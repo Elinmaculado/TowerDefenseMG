@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1464124517110946500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1502573314895626353}
+  - component: {fileID: 5478440250487461153}
+  m_Layer: 0
+  m_Name: upgrader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1502573314895626353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464124517110946500}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5904329114412820248}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5478440250487461153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464124517110946500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e897aee4eee958449818de19bee458f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 00000000000000000000000000000000
+  AttackSpeed: 00000000000000000000000000000000
+  Damage: 00000000000000000000000000000000
+  ammoSpeed: 00000000000000000000000000000000
+  topUpgradeTier: 0
+  topUpgradeCost: 00000000000000000000000000000000
+  downUpgradeTier: 0
+  downUpgradeCost: 00000000000000000000000000000000
+  ts: {fileID: 2678120863482893724}
 --- !u!1 &6846403016087416303
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +272,9 @@ PrefabInstance:
     - {fileID: 7921717974883464864, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8496435470261094243, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1502573314895626353}
     - targetCorrespondingSourceObject: {fileID: 7578002894438219016, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8661021285600139406}
@@ -250,8 +306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torret: {fileID: 8141670014356569375}
-  spawner: {fileID: 749189020658690436}
   Enemylist: []
+  spawnerlist: []
   ammo: {fileID: 2796321895453612714, guid: 103dd5b37d1ae5f4cae50cf2d5989a23, type: 3}
   ts: {fileID: 2678120863482893724}
 --- !u!114 &2678120863482893724 stripped
@@ -273,6 +329,11 @@ SphereCollider:
 --- !u!4 &5562924641044700531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7578002894438219016, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+  m_PrefabInstance: {fileID: 2601113589463097467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5904329114412820248 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8496435470261094243, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
   m_PrefabInstance: {fileID: 2601113589463097467}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8141670014356569375 stripped
