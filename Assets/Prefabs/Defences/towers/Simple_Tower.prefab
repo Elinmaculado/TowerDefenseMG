@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6427135407849019967}
   - component: {fileID: 6001244149088687317}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: upgrader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7812844209561453810}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: attackspawn (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,6 +124,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a667aef4f504bc849b3bc79007fab58c, type: 2}
+    - target: {fileID: 3349733052348123647, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3974513919653453788, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -143,6 +147,10 @@ PrefabInstance:
     - target: {fileID: 6038750841747824185, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_Name
       value: Simple_Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038750841747824185, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7578002894438219016, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -167,6 +175,10 @@ PrefabInstance:
     - target: {fileID: 7921717974883464864, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: ShootTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278100676787800092, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8496435470261094243, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,9 +301,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5203753762391368158, guid: a178dd9a066e0d948a2ad75ee46c9c95, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a178dd9a066e0d948a2ad75ee46c9c95, type: 3}
       propertyPath: m_Name
       value: Gun_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a178dd9a066e0d948a2ad75ee46c9c95, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5021845338904854755, guid: a178dd9a066e0d948a2ad75ee46c9c95, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503979569314575748, guid: a178dd9a066e0d948a2ad75ee46c9c95, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

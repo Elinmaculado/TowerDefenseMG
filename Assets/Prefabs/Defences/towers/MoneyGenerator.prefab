@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784189581301510289}
   - component: {fileID: 1337445023199996499}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Upgrader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8797759500217566018}
   - component: {fileID: 7807126235182594417}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Enemy_Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3412033447700143447}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MoneyGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7909297392448908046}
   - component: {fileID: 7631005454523908872}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,9 +239,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 306140793536569651, guid: 3279c9363722cc943a1744c429cbc096, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 785346102473000774, guid: 3279c9363722cc943a1744c429cbc096, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3279c9363722cc943a1744c429cbc096, type: 3}
       propertyPath: m_Name
       value: Upwards_3_
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3279c9363722cc943a1744c429cbc096, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785647031068634252, guid: 3279c9363722cc943a1744c429cbc096, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
