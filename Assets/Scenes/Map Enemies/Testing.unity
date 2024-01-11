@@ -17643,7 +17643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 338101099832948924, guid: 1e7915a2c05e03841a882078cd38994a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1538578158895414579, guid: 1e7915a2c05e03841a882078cd38994a, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -17794,6 +17794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummonerZombie
       objectReference: {fileID: 0}
+    - target: {fileID: 644160336553081218, guid: 1be68a01660280d41bcd6e2fdca925b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3619921543613312615, guid: 1be68a01660280d41bcd6e2fdca925b2, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
@@ -17898,6 +17902,10 @@ PrefabInstance:
     - target: {fileID: 2394110991413857883, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645224419146456387, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
+      propertyPath: movementSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2645224419146456387, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
       propertyPath: waypoints.Array.data[0]
