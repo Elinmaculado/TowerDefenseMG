@@ -34,6 +34,7 @@ Transform:
   - {fileID: 887972225263922458}
   - {fileID: 2098275705938985129}
   - {fileID: 323855952783329025}
+  - {fileID: 7198988267527625084}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!95 &830511462732235101
@@ -83,8 +84,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  movementSpeed: 9
+  movementSpeed: 1
   rotationSpeed: 10
+  TargetIndex: 1
   destroyTime: 3.5
   maxLife: 75
   fillImage: {fileID: 4919345779681343260}
@@ -339,6 +341,53 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7358612923388116156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7198988267527625084}
+  - component: {fileID: 1636316067188018419}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7198988267527625084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358612923388116156}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.3566527, y: 1.1283222, z: -0.6310322}
+  m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 147453333418385032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1636316067188018419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358612923388116156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76248fd26960034ca31fd5306bed30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 3619921543613312615}
+  summonDealy: 5
+  summonUnit: {fileID: 338101099832948924, guid: 1e7915a2c05e03841a882078cd38994a, type: 3}
 --- !u!1 &9040340784643124188
 GameObject:
   m_ObjectHideFlags: 0
