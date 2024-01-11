@@ -31,11 +31,19 @@ public class Low_rangeTower : MonoBehaviour
             {
                 Enemylist.RemoveAt(0);
             }
+            for (int i = 0; i < Enemylist.Count; i++)
+            {
+                if (Enemylist[i].GetComponentInParent<EnemyBehavior>().isDead)
+                {
+                    Enemylist.RemoveAt(i);
+                }
+            }
         }
         else
         {
             indextime = 0;
         }
+
     }
     private void OnTriggerEnter(Collider other)
     {
