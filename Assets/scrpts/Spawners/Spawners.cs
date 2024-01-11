@@ -118,7 +118,7 @@ public class Spawners : MonoBehaviour
     void SpawnInitialEnemy()
     {
         Transform positionToSpawn = spawnPositions[UnityEngine.Random.Range(0,spawnPositions.Count)];
-        GameObject enemmyToSpawn = (GameObject)Instantiate(initialEnemies[0], transform.position, transform.rotation);
+        GameObject enemmyToSpawn = (GameObject)Instantiate(initialEnemies[0], positionToSpawn.position, transform.rotation);
         enemmyToSpawn.GetComponent<EnemyBehavior>().waypoints = positionToSpawn.GetComponentInParent<WayPoints>().wayPoints;
         initialEnemies.RemoveAt(0);
         StartCoroutine(InitialEnemyDelay());
@@ -129,7 +129,7 @@ public class Spawners : MonoBehaviour
         yield return new WaitForSeconds(UnityEngine.Random.Range(initialMinDelay, initialMaxDelay));
         if (initialEnemies.Count <= 0)
         {
-            StartCoroutine(SpawnEnemyDelay());
+            SpawnEnemy();
         }
         else
         {
