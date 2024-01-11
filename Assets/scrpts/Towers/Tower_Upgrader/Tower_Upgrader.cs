@@ -11,8 +11,10 @@ public class Tower_Upgrader : MonoBehaviour
     [SerializeField] private List<int> Damage;
     [SerializeField] private List<int> ammoSpeed;
     [SerializeField] private int topUpgradeTier;
+    [SerializeField] private List<int> topUpgradeCost;
     [SerializeField] private int downUpgradeTier;
-    Tower_Stats ts;
+    [SerializeField] private List<int> downUpgradeCost;
+    [SerializeField] Tower_Stats ts;
 
     // aqui va a ver codigo
 
@@ -45,5 +47,9 @@ public class Tower_Upgrader : MonoBehaviour
             ts.TowerDamage += Damage[downUpgradeTier]; 
             ts.TowerAttackSpeed += AttackSpeed[downUpgradeTier];
         }
+    }
+    public void AddCost(int cost)
+    {
+        ts.TowerPrice += cost;
     }
 }

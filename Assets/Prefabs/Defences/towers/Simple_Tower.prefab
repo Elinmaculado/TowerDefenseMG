@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &729671714271779607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6427135407849019967}
+  - component: {fileID: 6001244149088687317}
+  m_Layer: 0
+  m_Name: upgrader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &6427135407849019967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729671714271779607}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8747976268558349656}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6001244149088687317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729671714271779607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e897aee4eee958449818de19bee458f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 00000000000000000000000000000000
+  AttackSpeed: 00000000000000000000000000000000
+  Damage: 00000000000000000000000000000000
+  ammoSpeed: 00000000000000000000000000000000
+  topUpgradeTier: 0
+  topUpgradeCost: 00000000000000000000000000000000
+  downUpgradeTier: 0
+  downUpgradeCost: 00000000000000000000000000000000
+  ts: {fileID: 990214267033667548}
 --- !u!1 &3255858547003494025
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,11 +186,11 @@ Transform:
   m_GameObject: {fileID: 4756379868190200280}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.3, z: 0.1}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalScale: {x: 0.1, y: 3, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8747976268558349656}
+  m_Father: {fileID: 1907356509412289086}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5158482942189719772
 MeshFilter:
@@ -348,7 +401,8 @@ Transform:
   m_LocalPosition: {x: 0.000000037252903, y: 0.05, z: 0.00000047683716}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7728703616264216645}
   m_Father: {fileID: 8747976268558349656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3232689972269670576
@@ -554,7 +608,7 @@ PrefabInstance:
       addedObject: {fileID: 1907356509412289086}
     - targetCorrespondingSourceObject: {fileID: 8496435470261094243, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7728703616264216645}
+      addedObject: {fileID: 6427135407849019967}
     - targetCorrespondingSourceObject: {fileID: 7578002894438219016, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8610539039521694642}
