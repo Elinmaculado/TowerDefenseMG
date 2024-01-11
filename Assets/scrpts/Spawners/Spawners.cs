@@ -27,13 +27,15 @@ public class Spawners : MonoBehaviour
         public int enemyAmount;
     }
 
- 
+
+   
+
 
     private void Start()
     {
-        
+
         GenerateEnemyQueue();
-        StartCoroutine(SpawnEnemyDelay());
+        StartCoroutine(InitialEnemyDelay());
     }
 
     private void GenerateEnemyQueue()
@@ -109,5 +111,30 @@ public class Spawners : MonoBehaviour
       
     }
 
-  
+    public List<GameObject> initialEnemies;
+    public float initialMaxDelay;
+    public float initialMinDelay;
+
+    void SpawnInitialEnemy()
+    {
+        Transform positionToSpawn = spawnPositions[UnityEngine.Random.Range(0,spawnPositions.Count)];
+        GameObject enemmyToSpawn = (GameObject)Instantiate(initialEnemies[0], transform.position, transform.rotation);
+        enemmyToSpawn.GetComponent<EnemyBehavior>().waypoints = positionToSpawn.GetComponentInParent<WayPoints>().wayPoints;
+        initialEnemies.RemoveAt(0);
+        StartCoroutine(InitialEnemyDelay());
+    }
+
+    IEnumerator InitialEnemyDelay()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(initialMinDelay, initialMaxDelay));
+        if (initialEnemies.Count <= 0)
+        {
+            StartCoroutine(SpawnEnemyDelay());
+        }
+        else
+        {
+           SpawnInitialEnemy();
+        }
+    }
+
 }

@@ -275,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5188925177216391106, guid: f176a41843487294ea58dcd7b72c85e0, type: 3}
       propertyPath: m_Name
-      value: Canvas (1)
+      value: MoneyMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -600,6 +600,13 @@ MonoBehaviour:
   - {fileID: 1820213246}
   totalOfEnemies: 0
   firstSpawnDelay: 3
+  initialEnemies:
+  - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
+  - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
+  - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
+  - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
+  initialMaxDelay: 17
+  initialMinDelay: 15
 --- !u!4 &690283055
 Transform:
   m_ObjectHideFlags: 0
@@ -1476,6 +1483,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 797392680184175360, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 797392680184175360, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -1568,7 +1579,15 @@ PrefabInstance:
       value: Level_Menu
       objectReference: {fileID: 0}
     - target: {fileID: 4242364868539941356, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242364868539941356, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242364868539941356, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5416472190418791513, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}

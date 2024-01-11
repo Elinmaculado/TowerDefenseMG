@@ -11,7 +11,7 @@ public class EnemyBehavior : MonoBehaviour
     public float movementSpeed;
     public float rotationSpeed;
 
-    private int TargetIndex = 1;
+    public int TargetIndex = 1;
     private Animator animator;
     private bool finalWaypoint;
     public float destroyTime;
@@ -49,10 +49,12 @@ public class EnemyBehavior : MonoBehaviour
         Movement();
         LookAt();
 
+        /*
         if (Input.GetKeyDown(KeyCode.D))
         {
             TakeDamage(10);
         }
+        */
         if (finalWaypoint && !isDead)
         {
             BaseHP.instance.TakeDamage(damage * Time.deltaTime);
