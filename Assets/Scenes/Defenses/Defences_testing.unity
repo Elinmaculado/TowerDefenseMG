@@ -796,34 +796,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1382970524500082599, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 1383555956962562544, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.73399
-      objectReference: {fileID: 0}
-    - target: {fileID: 1383555956962562544, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.69727
-      objectReference: {fileID: 0}
-    - target: {fileID: 1383555956962562544, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1383555956962562544, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2678120863482893724, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
-      propertyPath: TowerDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2678120863482893724, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
-      propertyPath: TowerAttackSpeed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5904329114412820248, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.6

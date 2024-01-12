@@ -68,6 +68,8 @@ public class Low_rangeTower : MonoBehaviour
             {
                 GameObject BalaTemp = Instantiate(ammo, spawnerlist[i].transform.position, spawnerlist[i].transform.rotation) as GameObject;
 
+                BalaTemp.GetComponent<ShootStats>().damage = ts.TowerDamage;
+
                 Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
 
                 rb.AddForce((spawnerlist[i].transform.position - transform.position) * ts.ammoSpeed);
