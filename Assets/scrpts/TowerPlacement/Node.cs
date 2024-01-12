@@ -32,11 +32,22 @@ public class Node : MonoBehaviour
         originalRenderer.material.color = startColor;
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1) && turret != null)
+        {
+            ResourceCostManager.AddResources((int)(turret.GetComponentInChildren<Tower_Stats>().TowerPrice*0.5f));
+            Destroy(turret.gameObject);
+            turret = null;
+            
+        }
+    }
+
     private void OnMouseDown()
     {
         if(turret != null)
         {
-            Debug.Log("Turret in here");
+            Debug.Log("Open upgrade UI");
         }
         else
         {
