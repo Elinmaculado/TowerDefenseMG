@@ -18,7 +18,7 @@ public class ShootStats : MonoBehaviour
             }
             else
             {
-                Destroy(this.gameObject);
+                Destroy(this.gameObject,.25f);
             }
         }
     }
