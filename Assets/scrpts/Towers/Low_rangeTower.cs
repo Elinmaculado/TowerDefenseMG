@@ -14,6 +14,7 @@ public class Low_rangeTower : MonoBehaviour
     [SerializeField] private List<GameObject> spawnerlist;
     [SerializeField] private GameObject ammo;
     [SerializeField] Tower_Stats ts;
+    [SerializeField] ParticleSystem efectoDeDisparo;
 
     private void Start()
     {
@@ -64,6 +65,7 @@ public class Low_rangeTower : MonoBehaviour
     {
         if(indextime > ts.TowerAttackSpeed)
         {
+            efectoDeDisparo.Play();
             for (int i = 0; i < spawnerlist.Count; i++)
             {
                 GameObject BalaTemp = Instantiate(ammo, spawnerlist[i].transform.position, spawnerlist[i].transform.rotation) as GameObject;
