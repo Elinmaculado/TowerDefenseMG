@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6910891722701776473}
   - component: {fileID: 650228662606870978}
   - component: {fileID: 1538578158895414579}
+  - component: {fileID: 6704776322558573020}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Enemy
@@ -91,6 +92,130 @@ MonoBehaviour:
   fillImage: {fileID: 1097860049637064929}
   isDead: 0
   damage: 10
+  attackGrunts:
+  - {fileID: 8300000, guid: ded7953c71a5b114b88c792f3aaf6a4d, type: 3}
+  - {fileID: 8300000, guid: be2d9df03674a864eabab53503c867a5, type: 3}
+  - {fileID: 8300000, guid: 816bbee504ee4bd4caa270b0cf87124a, type: 3}
+  - {fileID: 8300000, guid: c6179fe845e35f846a1dca02376ff0c8, type: 3}
+  - {fileID: 8300000, guid: 848f711fd18115b49a7a2762502cd581, type: 3}
+  movingGrunts:
+  - {fileID: 8300000, guid: 609a9d6960c44d949be68efefb170f67, type: 3}
+  - {fileID: 8300000, guid: 3bd91e9e11c6f1c4a9827bf91707ae13, type: 3}
+  - {fileID: 8300000, guid: 16be54c5bbcc38842a247b3844001d7a, type: 3}
+  - {fileID: 8300000, guid: 9a6f6dbcae829c447a19f069295fd578, type: 3}
+  - {fileID: 8300000, guid: bcdf2488f91a2cc4b9a2e2015187d025, type: 3}
+  - {fileID: 8300000, guid: ffab745af411e44479a655725bf11eee, type: 3}
+  - {fileID: 8300000, guid: 600fa5e6721a49041a98e9ae351fbbdf, type: 3}
+  attacksounds:
+  - {fileID: 8300000, guid: e2f4bd8722986104cbc7bcbeb18310b1, type: 3}
+  - {fileID: 8300000, guid: 6442120cf2a072b4bbac9544af7996b4, type: 3}
+  - {fileID: 8300000, guid: ad1b3b712eaf2b742af90b9733411e27, type: 3}
+  dyingsounds:
+  - {fileID: 8300000, guid: e536b97d917e8f6469617104000ce130, type: 3}
+  - {fileID: 8300000, guid: 71dc42c6ce3855d4195d2562c70ddeb5, type: 3}
+  - {fileID: 8300000, guid: 1fa785dbec121cc4c9c68f66b9e03f29, type: 3}
+  - {fileID: 8300000, guid: 2766b8202689ed34fb098c61f2ba3aa0, type: 3}
+  gettinHitsounds:
+  - {fileID: 8300000, guid: 879909db68c01db4e957879c1cbd730d, type: 3}
+  - {fileID: 8300000, guid: 9d7c18edb3973de43b964448281f34a3, type: 3}
+  - {fileID: 8300000, guid: 6783d3e0d074b744d991c31a2be15ddf, type: 3}
+  enemyAudioSource: {fileID: 6704776322558573020}
+--- !u!82 &6704776322558573020
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338101099832948924}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 7866581244724228400, guid: 0dd804f33137dad44abac58fe81bf0bb, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &489891024074263776
 GameObject:
   m_ObjectHideFlags: 0
