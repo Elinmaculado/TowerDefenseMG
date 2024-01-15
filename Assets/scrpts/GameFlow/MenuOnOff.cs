@@ -7,11 +7,7 @@ public class MenuOnOff : MonoBehaviour
 
     [SerializeField] private List<GameObject> on;
     [SerializeField] private List<GameObject> off;
-    [SerializeField] private AudioClip pause;
-    [SerializeField] private AudioClip unPause;    
-    [SerializeField] private AudioClip fastSpeed;
-    [SerializeField] private AudioClip slowSpeed;
-    [SerializeField] private AudioSource audioSource;
+
 
     public void OnOff()
     {
@@ -28,26 +24,26 @@ public class MenuOnOff : MonoBehaviour
 
     public void Pause()
     {
-        audioSource.PlayOneShot(pause);
+        PauseSound.instance.PlayPause();
         Time.timeScale = 0.0f;
     }
 
     public void UnPuause()
     {
-        audioSource.PlayOneShot(unPause);
+        PauseSound.instance.PlayUnpause();
         Time.timeScale = 1.0f;
     }
 
-    public void OnCanvasGroupChanged()
+    public void ChangeSpeed()
     {
         if(Time.timeScale != 1.0f)
         {
-            audioSource.PlayOneShot(slowSpeed);
+            PauseSound.instance.PlaySlow();
             Time.timeScale = 1.0f;
         }
         else
         {
-            audioSource.PlayOneShot(fastSpeed);
+            PauseSound.instance.PlayFast();
             Time.timeScale = 2.0f;
         }
     }
