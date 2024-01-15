@@ -12,6 +12,7 @@ public class Enemy_Detector : MonoBehaviour
     [SerializeField] public List<GameObject> Enemylist;
     [SerializeField] private GameObject ammo;
     [SerializeField] Tower_Stats ts;
+    [SerializeField] private ParticleSystem efectosDeDisparos;
 
     private void Start()
     {
@@ -26,6 +27,8 @@ public class Enemy_Detector : MonoBehaviour
                  apuntar();
                 if (indextime > ts.TowerAttackSpeed)
                 {
+                    efectosDeDisparos.Play();
+
                     GameObject BalaTemp = Instantiate(ammo, spawner.transform.position, spawner.transform.rotation) as GameObject;
 
                     BalaTemp.GetComponent<ShootStats>().damage = ts.TowerDamage;
