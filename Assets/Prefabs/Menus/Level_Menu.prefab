@@ -47,6 +47,9 @@ MonoBehaviour:
   winScreen: {fileID: 6485927006555724602}
   losseScreen: {fileID: 2543656106353122720}
   levelMenu: {fileID: 8206279226275468811}
+  musicLevel: {fileID: 0}
+  winSFX: {fileID: 0}
+  losseSFX: {fileID: 0}
   totalOffEnemies: 0
 --- !u!1 &446369874574725076
 GameObject:
