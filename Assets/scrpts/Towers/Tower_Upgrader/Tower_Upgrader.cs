@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
@@ -15,12 +16,14 @@ public class Tower_Upgrader : MonoBehaviour
     [SerializeField] private int downUpgradeTier;
     [SerializeField] private List<int> downUpgradeCost;
     [SerializeField] Tower_Stats ts;
+    public GResourceManager ResourceManager;
 
     // aqui va a ver codigo
 
     private void Start()
     {
-        ts= GetComponent<Tower_Stats>();
+        ts= GetComponentInChildren<Tower_Stats>();
+        ResourceManager = FindAnyObjectByType<GResourceManager>();
     }
 
     public void topUpgrade()
@@ -31,8 +34,16 @@ public class Tower_Upgrader : MonoBehaviour
         }
         else
         {
-            ts.TowerRange += Range[topUpgradeTier];
-            ts.ammoSpeed += ammoSpeed[topUpgradeTier];
+            if (ResourceManager.RecursosActuales > topUpgradeCost[topUpgradeTier])
+            {
+                ResourceManager.RecursosActuales -= topUpgradeCost[topUpgradeTier];
+                ts.TowerRange += Range[topUpgradeTier];
+                ts.TowerAttackSpeed += AttackSpeed[downUpgradeTier];
+            }
+            else
+            {
+                Debug.Log("el piojo");
+            }
         }
     }
 
@@ -44,8 +55,16 @@ public class Tower_Upgrader : MonoBehaviour
         }
         else
         {
-            ts.TowerDamage += Damage[downUpgradeTier]; 
-            ts.TowerAttackSpeed += AttackSpeed[downUpgradeTier];
+            if (ResourceManager.RecursosActuales > topUpgradeCost[topUpgradeTier])
+            {
+                ResourceManager.RecursosActuales -= topUpgradeCost[topUpgradeTier];
+                ts.TowerDamage += Damage[downUpgradeTier];
+                ts.ammoSpeed += ammoSpeed[topUpgradeTier];
+            }
+            else
+            {
+                Debug.Log("el piojo");
+            }
         }
     }
     public void AddCost(int cost)

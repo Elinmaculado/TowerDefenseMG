@@ -1,58 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &729671714271779607
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6427135407849019967}
-  - component: {fileID: 6001244149088687317}
-  m_Layer: 2
-  m_Name: upgrader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &6427135407849019967
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729671714271779607}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8747976268558349656}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6001244149088687317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729671714271779607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e897aee4eee958449818de19bee458f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Range: 00000000000000000000000000000000
-  AttackSpeed: 00000000000000000000000000000000
-  Damage: 00000000000000000000000000000000
-  ammoSpeed: 00000000000000000000000000000000
-  topUpgradeTier: 0
-  topUpgradeCost: 00000000000000000000000000000000
-  downUpgradeTier: 0
-  downUpgradeCost: 00000000000000000000000000000000
-  ts: {fileID: 990214267033667548}
 --- !u!1 &6838486477456597009
 GameObject:
   m_ObjectHideFlags: 0
@@ -4948,6 +4895,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: ts
+      value: 
+      objectReference: {fileID: 990214267033667548}
     - target: {fileID: 3127028476212555981, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5056,9 +5007,6 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 6117021592432123236, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8496435470261094243, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6427135407849019967}
     - targetCorrespondingSourceObject: {fileID: 8496435470261094243, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7383706535483334874}

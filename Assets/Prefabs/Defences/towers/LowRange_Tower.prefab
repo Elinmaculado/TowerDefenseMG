@@ -53,6 +53,7 @@ MonoBehaviour:
   downUpgradeTier: 0
   downUpgradeCost: 00000000000000000000000000000000
   ts: {fileID: 2678120863482893724}
+  ResourceManager: {fileID: 0}
 --- !u!1 &1546185192825051143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5260,6 +5261,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: ts
+      value: 
+      objectReference: {fileID: 2678120863482893724}
     - target: {fileID: 3127028476212555981, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

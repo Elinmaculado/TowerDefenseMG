@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1679676849091860983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5612026465459512264}
+  - component: {fileID: 7890329534289902857}
+  m_Layer: 0
+  m_Name: generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5612026465459512264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679676849091860983}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7909297392448908046}
+  m_Father: {fileID: 3412033447700143447}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7890329534289902857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679676849091860983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830a8c17992e7aa42ab5422cb646be0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResourceManager: {fileID: 0}
+  MoneyAmount: 25
+  GenerationSpeed: 5
+  ts: {fileID: 7631005454523908872}
 --- !u!1 &2521407431723842539
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,14 +93,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e897aee4eee958449818de19bee458f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 
-  AttackSpeed: 
-  Damage: 
-  ammoSpeed: 
+  Range: 00000000000000000000000000000000
+  AttackSpeed: 00000000000000000000000000000000
+  Damage: 00000000000000000000000000000000
+  ammoSpeed: 00000000000000000000000000000000
   topUpgradeTier: 0
-  topUpgradeCost: 
+  topUpgradeCost: 00000000000000000000000000000000
   downUpgradeTier: 0
-  downUpgradeCost: 
+  downUpgradeCost: 00000000000000000000000000000000
   ts: {fileID: 7631005454523908872}
 --- !u!1 &2749831940761252168
 GameObject:
@@ -117,7 +166,7 @@ GameObject:
   - component: {fileID: 3412033447700143447}
   m_Layer: 2
   m_Name: MoneyGenerator
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7909297392448908046}
+  - {fileID: 5612026465459512264}
   - {fileID: 1424827579969163144}
   - {fileID: 8797759500217566018}
   - {fileID: 784189581301510289}
@@ -167,11 +216,11 @@ Transform:
   m_GameObject: {fileID: 5827728746602875505}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.0715, y: -1.248, z: 6.3146}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3412033447700143447}
+  m_Father: {fileID: 5612026465459512264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7631005454523908872
 MonoBehaviour:
@@ -186,10 +235,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerPrice: 50
-  TowerRange: 3
-  ammoSpeed: 1
-  TowerDamage: 5
-  TowerAttackSpeed: 1
+  TowerRange: 0
+  ammoSpeed: 0
+  TowerDamage: 25
+  TowerAttackSpeed: 5
   SphereCollider: {fileID: 7807126235182594417}
 --- !u!1001 &1462746701252044899
 PrefabInstance:
