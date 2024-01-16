@@ -17,6 +17,7 @@ public class Tower_Upgrader : MonoBehaviour
     [SerializeField] private List<int> downUpgradeCost;
     [SerializeField] Tower_Stats ts;
     public GResourceManager ResourceManager;
+    [SerializeField] private ParticleSystem upgradeEffect;
 
     // aqui va a ver codigo
 
@@ -39,6 +40,7 @@ public class Tower_Upgrader : MonoBehaviour
                 ResourceManager.RecursosActuales -= topUpgradeCost[topUpgradeTier];
                 ts.TowerRange += Range[topUpgradeTier];
                 ts.TowerAttackSpeed += AttackSpeed[downUpgradeTier];
+                upgradeEffect.Play();
             }
             else
             {
@@ -60,6 +62,7 @@ public class Tower_Upgrader : MonoBehaviour
                 ResourceManager.RecursosActuales -= topUpgradeCost[topUpgradeTier];
                 ts.TowerDamage += Damage[downUpgradeTier];
                 ts.ammoSpeed += ammoSpeed[topUpgradeTier];
+                upgradeEffect.Play();
             }
             else
             {
