@@ -29,17 +29,32 @@ public class EnemyBehavior : MonoBehaviour
     public float damage;
 
 
+    //Sound
+    public List<AudioClip> attackGrunts;
+    public List<AudioClip> movingGrunts;
+    public List<AudioClip> attacksounds;
+    public List<AudioClip> dyingsounds;
+    public List<AudioClip> gettinHitsounds;
+    public AudioSource enemyAudioSource;
+
+
+
+
+
     void Awake()
     {
         canvasRoot = fillImage.transform.parent.parent;
         lifeRotation = canvasRoot.rotation;
         //El animator accede al componente para poder manipular los booleanos
         animator = GetComponent<Animator>();
+        //enemyAudioSource = FindAnyObjectByType<AudioSource>();
     }
 
     private void Start()
     {
         currentLife = maxLife;
+        PlaySound(movingGrunts[Random.Range(0, movingGrunts.Count)]);
+        StartCoroutine(WalkingGrunt());
     }
 
     // Update is called once per frame
@@ -55,13 +70,10 @@ public class EnemyBehavior : MonoBehaviour
             TakeDamage(10);
         }
         */
-        if (finalWaypoint && !isDead)
-        {
-            BaseHP.instance.TakeDamage(damage * Time.deltaTime);
-        }
-
     }
- 
+
+  
+
     #region Movement;
     private void Movement()
     {
@@ -94,6 +106,8 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+
+
     private void LookAt()
     {
         if (isDead)
@@ -124,6 +138,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
+            PlaySound(gettinHitsounds[Random.Range(0,gettinHitsounds.Count)]);
             currentLife = newLife;
             var fillValue = currentLife * 1 / maxLife;
             fillImage.fillAmount = fillValue;
@@ -138,6 +153,7 @@ public class EnemyBehavior : MonoBehaviour
         currentLife = 0;
         fillImage.fillAmount = 0;
         Destroy(gameObject, destroyTime);
+        PlaySound(dyingsounds[Random.Range(0, dyingsounds.Count)]);
         GameManager.instance.IsLevelCleared();
     }
 
@@ -146,5 +162,37 @@ public class EnemyBehavior : MonoBehaviour
         Debug.Log("test");
     }
 
+    #endregion
+
+    #region Sound
+    private void DealDamage()
+    {
+        if (finalWaypoint && !isDead)
+        {
+            BaseHP.instance.TakeDamage(damage);
+            PlaySound(attackGrunts[Random.Range(0, attackGrunts.Count)]);
+            PlaySound(attacksounds[Random.Range(0, attacksounds.Count)]);
+        }
+    }
+    IEnumerator WalkingGrunt()
+    {
+
+        yield return new WaitForSeconds(Random.Range(10,20));
+        if (isDead)
+        {
+            yield break;
+        }
+        else
+        {
+            PlaySound(movingGrunts[Random.Range(0, movingGrunts.Count)]);
+            StartCoroutine(WalkingGrunt());
+        }
+    }
+
+
+    void PlaySound(AudioClip clipToPlay)
+    {
+        enemyAudioSource.PlayOneShot(clipToPlay,0.1f);
+    }
     #endregion
 }
