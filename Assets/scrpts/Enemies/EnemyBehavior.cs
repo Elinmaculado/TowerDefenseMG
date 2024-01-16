@@ -138,7 +138,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-            PlaySound(gettinHitsounds[Random.Range(0,gettinHitsounds.Count)]);
+            if (Random.Range(0, 100) > 96) {PlaySound(gettinHitsounds[Random.Range(0,gettinHitsounds.Count)]); } 
             currentLife = newLife;
             var fillValue = currentLife * 1 / maxLife;
             fillImage.fillAmount = fillValue;
