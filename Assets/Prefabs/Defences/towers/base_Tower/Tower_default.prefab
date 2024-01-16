@@ -50,6 +50,7 @@ MonoBehaviour:
   Enemylist: []
   ammo: {fileID: 0}
   ts: {fileID: 0}
+  efectosDeDisparos: {fileID: 0}
 --- !u!135 &850553569129348662
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -131,8 +132,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2915736623201427812}
   - {fileID: 7578002894438219016}
-  - {fileID: 1185724144499194546}
   - {fileID: 9045346031154979461}
   - {fileID: 3974513919653453788}
   m_Father: {fileID: 0}
@@ -270,6 +271,61 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &6492493479375586762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2915736623201427812}
+  - component: {fileID: 2435265695586699865}
+  m_Layer: 2
+  m_Name: upgrader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &2915736623201427812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6492493479375586762}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.2300453, y: 0, z: -3.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1185724144499194546}
+  m_Father: {fileID: 8496435470261094243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2435265695586699865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6492493479375586762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e897aee4eee958449818de19bee458f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 00000000000000000000000000000000
+  AttackSpeed: 00000000000000000000000000000000
+  Damage: 00000000000000000000000000000000
+  ammoSpeed: 00000000000000000000000000000000
+  topUpgradeTier: 0
+  topUpgradeCost: 00000000000000000000000000000000
+  downUpgradeTier: 0
+  downUpgradeCost: 00000000000000000000000000000000
+  ts: {fileID: 0}
+  ResourceManager: {fileID: 0}
 --- !u!1 &8278100676787800092
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,12 +351,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8278100676787800092}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.2300453, y: 0, z: 3.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8496435470261094243}
+  m_Father: {fileID: 2915736623201427812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &86584046067807719
 MonoBehaviour:
