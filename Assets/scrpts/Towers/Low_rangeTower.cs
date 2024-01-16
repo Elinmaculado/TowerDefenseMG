@@ -15,6 +15,8 @@ public class Low_rangeTower : MonoBehaviour
     [SerializeField] private GameObject ammo;
     [SerializeField] Tower_Stats ts;
     [SerializeField] ParticleSystem efectoDeDisparo;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private List<AudioClip> shootingsSounds;
 
     private void Start()
     {
@@ -65,6 +67,7 @@ public class Low_rangeTower : MonoBehaviour
     {
         if(indextime > ts.TowerAttackSpeed)
         {
+            audioSource.PlayOneShot(shootingsSounds[Random.Range(0, shootingsSounds.Count)], 0.2f);
             efectoDeDisparo.Play();
             for (int i = 0; i < spawnerlist.Count; i++)
             {

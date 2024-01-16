@@ -74,7 +74,7 @@ public class InfiniteSpawner : MonoBehaviour
     IEnumerator InitialDelay()
     {
         yield return new WaitForSeconds(Random.Range(initialMinDelay, initialMaxDelay));
-        if (initialEnemies.Count <= 0)
+        if (initialEnemies.Count > 0)
         {
             InitialQueue();
         }
