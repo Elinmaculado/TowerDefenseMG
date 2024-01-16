@@ -506,6 +506,7 @@ MonoBehaviour:
   - {fileID: 770425707}
   totalOfEnemies: 0
   firstSpawnDelay: 5
+  stepTime: 0.4
   initialEnemies:
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
@@ -598,6 +599,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 528459724099483650, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
+      propertyPath: musicLevel
+      value: 
+      objectReference: {fileID: 284833451}
     - target: {fileID: 797392680184175360, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

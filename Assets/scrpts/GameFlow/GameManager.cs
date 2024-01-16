@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject losseScreen;
     [SerializeField] private GameObject levelMenu;
+    [SerializeField] private AudioSource musicLevel;
+    [SerializeField] private AudioClip winSFX;
+    [SerializeField] private AudioClip losseSFX;
 
     public int totalOffEnemies;
 
@@ -25,6 +28,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0.0f;
+        musicLevel.Pause();
+        musicLevel.PlayOneShot(losseSFX);
         levelMenu.SetActive(false);
         losseScreen.gameObject.SetActive(true);
     }
@@ -32,6 +37,8 @@ public class GameManager : MonoBehaviour
     public void LevelCleared()
     {
         levelMenu.SetActive(false);
+        musicLevel.Pause();
+        musicLevel.PlayOneShot(winSFX);
         winScreen.gameObject.SetActive(true);
     }
 
