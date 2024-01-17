@@ -93,7 +93,6 @@ public class EnemyBehavior : MonoBehaviour
             //Como es una lista que empieza en 0 el último es waypoint -1
             if (TargetIndex >= waypoints.Count - 1)
             {
-                Debug.Log("El enemigo llegó al final");
                 animator.SetBool("IsAttacking", true);
                 finalWaypoint = true;
                 return;

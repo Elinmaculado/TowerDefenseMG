@@ -54,6 +54,7 @@ public class Spawners : MonoBehaviour
         }
 
         GameManager.instance.totalOffEnemies = totalOfEnemies;
+        GameManager.instance.currentEnemies = totalOfEnemies;
 
         //Generate delay time queue
         GenerateRandomDelays(); 
