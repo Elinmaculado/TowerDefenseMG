@@ -97,9 +97,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e897aee4eee958449818de19bee458f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 00000000000000000000000000000000
-  AttackSpeed: 00000000000000000000000000000000
-  Damage: 00000000000000000000000000000000
+  Range:
+  - 0
+  - 0
+  - 0
+  - 0
+  AttackSpeed:
+  - 7.5
+  - 5
+  - 3
+  - 5
+  Damage:
+  - 10
+  - 15
+  - 25
+  - 150
   ammoSpeed: 00000000000000000000000000000000
   topUpgradeTier: 0
   topUpgradeCost: 00000000000000000000000000000000
@@ -5067,11 +5079,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65a4579208fb54449ac490015d61763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerPrice: 50
+  TowerPrice: 200
   TowerRange: 0
   ammoSpeed: 0
-  TowerDamage: 25
-  TowerAttackSpeed: 5
+  TowerDamage: 5
+  TowerAttackSpeed: 10
   SphereCollider: {fileID: 7807126235182594417}
 --- !u!1 &6236716582597523307
 GameObject:
