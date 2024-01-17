@@ -1251,7 +1251,7 @@ PrefabInstance:
     - target: {fileID: 2107570245065150156, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d184ec490d800484c817155bf3f4ac69, type: 3}
+      objectReference: {fileID: 21300000, guid: cc4c0ef3c7eaed9459ea36a8a1945855, type: 3}
     - target: {fileID: 2122374429992531008, guid: 0b5a7c9a9ada7a5458a14abce35102d2, type: 3}
       propertyPath: m_Pivot.x
       value: 0

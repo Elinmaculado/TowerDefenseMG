@@ -38,7 +38,6 @@ public class Spawners : MonoBehaviour
     {
 
         GenerateEnemyQueue();
-        totalOfEnemies += initialEnemies.Count;
         StartCoroutine(InitialEnemyDelay());
     }
 
@@ -53,8 +52,7 @@ public class Spawners : MonoBehaviour
             totalOfEnemies += tmpEnemies[i].enemyAmount;
         }
 
-        GameManager.instance.totalOffEnemies = totalOfEnemies;
-        GameManager.instance.currentEnemies = totalOfEnemies;
+        
 
         //Generate delay time queue
         GenerateRandomDelays(); 
@@ -70,7 +68,9 @@ public class Spawners : MonoBehaviour
                 tmpEnemies.RemoveAt(enemyIndex);
             }
         }
-
+        totalOfEnemies += initialEnemies.Count;
+        GameManager.instance.totalOffEnemies = totalOfEnemies;
+        GameManager.instance.currentEnemies = totalOfEnemies;
         //Generate spawn position queue
         for (int j = 0; j < totalOfEnemies; j++)
         {
