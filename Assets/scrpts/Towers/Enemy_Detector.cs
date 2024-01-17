@@ -13,6 +13,8 @@ public class Enemy_Detector : MonoBehaviour
     [SerializeField] private GameObject ammo;
     [SerializeField] Tower_Stats ts;
     [SerializeField] private ParticleSystem efectosDeDisparos;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private List<AudioClip> shootingsSounds;
 
     private void Start()
     {
@@ -34,6 +36,8 @@ public class Enemy_Detector : MonoBehaviour
                     BalaTemp.GetComponent<ShootStats>().damage = ts.TowerDamage;
 
                     Rigidbody rb = BalaTemp.GetComponent<Rigidbody>();
+
+                    audioSource.PlayOneShot(shootingsSounds[Random.Range(0, shootingsSounds.Count)],0.2f);
 
                     rb.AddForce((Enemylist[0].transform.position - transform.position) * ts.ammoSpeed);
 

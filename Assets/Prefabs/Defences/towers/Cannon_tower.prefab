@@ -4986,6 +4986,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 603757711349834795, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7866581244724228400, guid: 0dd804f33137dad44abac58fe81bf0bb, type: 2}
     - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: ammoSpeed
       value: 50
@@ -5031,9 +5035,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3874929261047458140}
     - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 3997976956125983396}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: efectosDeDisparos
       value: 
       objectReference: {fileID: 7644812352340547711}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: shootingsSounds.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: shootingsSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ca2c38687e81bfa4c9ba60c5e9aef793, type: 3}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: shootingsSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 84878c12d5d89e94592c58a1e0e43062, type: 3}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: shootingsSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d927f3794993da478f2e6cc55094311, type: 3}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: shootingsSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 096f3472d5ede9d45ae4f6d32eb5d7bc, type: 3}
+    - target: {fileID: 7017155350575432859, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: shootingsSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3878e1bca3eeb624db40502c58da897c, type: 3}
     - target: {fileID: 8610539039521694642, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6777097
@@ -5108,6 +5140,11 @@ PrefabInstance:
       addedObject: {fileID: 825412330208078922}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+--- !u!82 &3997976956125983396 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 603757711349834795, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+  m_PrefabInstance: {fileID: 4547316950732035727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5079038649090794455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8747976268558349656, guid: f29a02a5ffb975047998badb8deb9832, type: 3}

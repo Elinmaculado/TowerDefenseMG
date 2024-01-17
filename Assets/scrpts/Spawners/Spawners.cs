@@ -5,8 +5,9 @@ using System.Linq;
 using UnityEngine;
 
 public class Spawners : MonoBehaviour
-{   
-    [SerializeField]  List<Enemie> levelEnemies;
+{
+   
+    [SerializeField] List<Enemie> levelEnemies;
     [SerializeField] List<Transform> spawnPositions;
     
     public int totalOfEnemies = 0;
@@ -17,8 +18,10 @@ public class Spawners : MonoBehaviour
 
     #region Spawn Times
     public float firstSpawnDelay = 5.0f;
+    
     float minDelayTime = 5.0f;
     float maxDelayTime = 7.0f;
+    [SerializeField] private float stepTime = 0.4f;
     #endregion
 
     [System.Serializable]
@@ -49,7 +52,7 @@ public class Spawners : MonoBehaviour
             totalOfEnemies += tmpEnemies[i].enemyAmount;
         }
 
-        GameManager.instance.totalOffEnemies = totalOfEnemies;
+        
 
         //Generate delay time queue
         GenerateRandomDelays(); 
@@ -65,7 +68,9 @@ public class Spawners : MonoBehaviour
                 tmpEnemies.RemoveAt(enemyIndex);
             }
         }
-
+        totalOfEnemies += initialEnemies.Count;
+        GameManager.instance.totalOffEnemies = totalOfEnemies;
+        GameManager.instance.currentEnemies = totalOfEnemies;
         //Generate spawn position queue
         for (int j = 0; j < totalOfEnemies; j++)
         {
@@ -98,8 +103,8 @@ public class Spawners : MonoBehaviour
         for(int i = 0; i<totalOfEnemies;i++)
         {
             delayTime.Enqueue(UnityEngine.Random.Range(minDelayTime,maxDelayTime));
-            minDelayTime -= minDelayTime > 1.0f ? 0.4f : 0;
-            maxDelayTime -= maxDelayTime > 1.5f ? 0.2f : 0;
+            minDelayTime -= minDelayTime > 1.0f ? stepTime : 0;
+            maxDelayTime -= maxDelayTime > 1.5f ? stepTime : 0;
         }
     }
 

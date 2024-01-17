@@ -396,7 +396,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.1383, y: -0.54, z: 1.4078}
-  m_LocalScale: {x: 3.7156372, y: 3.5456, z: 3.6913242}
+  m_LocalScale: {x: 5.2776914, y: 3.5456, z: 4.6160007}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 145984404800859418}
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.050943315, b: 0.050943315, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
