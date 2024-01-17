@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e897aee4eee958449818de19bee458f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 00000000000000000000000000000000
-  AttackSpeed: 00000000000000000000000000000000
-  Damage: 00000000000000000000000000000000
+  Range: []
+  AttackSpeed: []
+  Damage: []
   ammoSpeed: 00000000000000000000000000000000
   topUpgradeTier: 0
   topUpgradeCost: 00000000000000000000000000000000
@@ -10064,7 +10064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 86584046067807719, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: TowerPrice
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 86584046067807719, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: TowerRange

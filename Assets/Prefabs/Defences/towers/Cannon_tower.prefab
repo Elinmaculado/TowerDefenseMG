@@ -4995,6 +4995,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: TowerPrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: TowerDamage
       value: 20
       objectReference: {fileID: 0}

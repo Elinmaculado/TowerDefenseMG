@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class Tower_Upgrader : MonoBehaviour
 {
-    [SerializeField] private List<int> Range;
-    [SerializeField] private List<int> AttackSpeed;
-    [SerializeField] private List<int> Damage;
+    [SerializeField] private List<float> Range;
+    [SerializeField] private List<float> AttackSpeed;
+    [SerializeField] private List<float> Damage;
     [SerializeField] private List<int> ammoSpeed;
     [SerializeField] private int topUpgradeTier;
     [SerializeField] private List<int> topUpgradeCost;
