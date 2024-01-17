@@ -3,7 +3,17 @@ guid: 710ca1935ae2a7e4b8d033f7431b7e2d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - winScreen: {instanceID: 0}
+  - losseScreen: {instanceID: 0}
+  - levelMenu: {instanceID: 0}
+  - musicLevel: {instanceID: 0}
+  - effectsSource: {instanceID: 0}
+  - winSFX: {fileID: 8300000, guid: 63aa452da4ce09747ad61ed2f172a1c6, type: 3}
+  - losseMusic: {fileID: 8300000, guid: 7d50401cd9626294ebf426f8dfd8112d, type: 3}
+  - fenceBreak: {fileID: 8300000, guid: 110170e8b3b30e345bef7e76215e40cc, type: 3}
+  - scream: {fileID: 8300000, guid: b3196b6ac02287047b1b375e13ab6a74, type: 3}
+  - zombieSound: {fileID: 8300000, guid: 6127334597a7fd9478efd3c4d95452c3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

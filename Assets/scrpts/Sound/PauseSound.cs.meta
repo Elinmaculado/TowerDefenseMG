@@ -3,7 +3,12 @@ guid: 37161d42ad6535746af7f1d2ef321aee
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pause: {fileID: 8300000, guid: 6aea2417b8a182c4cb2c80664b854566, type: 3}
+  - unPause: {fileID: 8300000, guid: 65137491681506248987aa8411330046, type: 3}
+  - fastSpeed: {instanceID: 0}
+  - slowSpeed: {instanceID: 0}
+  - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

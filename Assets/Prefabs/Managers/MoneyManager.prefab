@@ -211,6 +211,11 @@ MonoBehaviour:
   - {fileID: 6864500678434155522, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
   - {fileID: 6942521287096941197, guid: dbf8daf4d8093264885f16a0bd94da3e, type: 3}
   - {fileID: 8634791239450623554, guid: 6f4b1fa540eea3548821b4a72b4367aa, type: 3}
+  turretImages:
+  - {fileID: 7430742912398223026}
+  - {fileID: 8852611793273793543}
+  - {fileID: 9123069412726643177}
+  - {fileID: 249804035038824809}
   standerdTurretPrefab: {fileID: 3893061144011627147, guid: d20a5b41aad9059428b45001da63feb2, type: 3}
   turretBuild: {fileID: 0}
 --- !u!1 &2296824759145142623
