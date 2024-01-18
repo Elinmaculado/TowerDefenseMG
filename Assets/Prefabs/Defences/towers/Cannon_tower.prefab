@@ -4999,8 +4999,12 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: TowerRange
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: TowerDamage
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 990214267033667548, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: TowerAttackSpeed
@@ -5010,6 +5014,66 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ac170587621497a4baf771dd9e23cc1f, type: 2}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: Range.Array.data[0]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: Range.Array.data[1]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: Range.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: Range.Array.data[3]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: Damage.Array.data[0]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: Damage.Array.data[1]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: Damage.Array.data[2]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: Damage.Array.data[3]
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: ammoSpeed.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: ammoSpeed.Array.data[1]
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: ammoSpeed.Array.data[2]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: ammoSpeed.Array.data[3]
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: AttackSpeed.Array.data[3]
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: topUpgradeCost.Array.data[3]
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262193985332279394, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
+      propertyPath: downUpgradeCost.Array.data[3]
+      value: 2500
+      objectReference: {fileID: 0}
     - target: {fileID: 4015676676970493599, guid: f29a02a5ffb975047998badb8deb9832, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

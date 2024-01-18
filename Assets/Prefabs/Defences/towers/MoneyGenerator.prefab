@@ -106,7 +106,7 @@ MonoBehaviour:
   - 7.5
   - 5
   - 3
-  - 5
+  - 1
   Damage:
   - 10
   - 15
@@ -114,9 +114,9 @@ MonoBehaviour:
   - 150
   ammoSpeed: 00000000000000000000000000000000
   topUpgradeTier: 0
-  topUpgradeCost: 00000000000000000000000000000000
+  topUpgradeCost: 90010000e8030000c409000088130000
   downUpgradeTier: 0
-  downUpgradeCost: 00000000000000000000000000000000
+  downUpgradeCost: 90010000e8030000c409000088130000
   ts: {fileID: 7631005454523908872}
   ResourceManager: {fileID: 0}
   upgradeEffect: {fileID: 2301248419411962247}
