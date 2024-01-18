@@ -38,8 +38,9 @@ public class Tower_Upgrader : MonoBehaviour
             if (ResourceManager.RecursosActuales > topUpgradeCost[topUpgradeTier])
             {
                 ResourceManager.RecursosActuales -= topUpgradeCost[topUpgradeTier];
-                ts.TowerRange += Range[topUpgradeTier];
-                ts.TowerAttackSpeed += AttackSpeed[downUpgradeTier];
+                ts.TowerRange = Range[topUpgradeTier];
+                    ts.TowerAttackSpeed = AttackSpeed[downUpgradeTier];
+
                 upgradeEffect.Play();
             }
             else
@@ -60,8 +61,8 @@ public class Tower_Upgrader : MonoBehaviour
             if (ResourceManager.RecursosActuales > topUpgradeCost[topUpgradeTier])
             {
                 ResourceManager.RecursosActuales -= topUpgradeCost[topUpgradeTier];
-                ts.TowerDamage += Damage[downUpgradeTier];
-                ts.ammoSpeed += ammoSpeed[topUpgradeTier];
+                ts.TowerDamage = Damage[downUpgradeTier];
+                ts.ammoSpeed = ammoSpeed[topUpgradeTier];
                 upgradeEffect.Play();
             }
             else

@@ -2326,6 +2326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoneyManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6166386839858263095, guid: f176a41843487294ea58dcd7b72c85e0, type: 3}
+      propertyPath: RecursosActuales
+      value: 6000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

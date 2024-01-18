@@ -6,6 +6,7 @@ public class ShootStats : MonoBehaviour
 {
     [SerializeField] public float speed;
     [SerializeField] public float damage;
+    [SerializeField] public float perfo;
     [SerializeField] private bool itsCannon;
    
     private void OnTriggerEnter(Collider other)
@@ -18,7 +19,7 @@ public class ShootStats : MonoBehaviour
             }
             else
             {
-                Destroy(this.gameObject,.25f);
+                Destroy(this.gameObject,perfo);
             }
         }
     }
