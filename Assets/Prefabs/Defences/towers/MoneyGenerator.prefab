@@ -120,6 +120,8 @@ MonoBehaviour:
   ts: {fileID: 7631005454523908872}
   ResourceManager: {fileID: 0}
   upgradeEffect: {fileID: 2301248419411962247}
+  topDescription: More speed generator
+  downDescription: More money
 --- !u!1 &2749831940761252168
 GameObject:
   m_ObjectHideFlags: 0

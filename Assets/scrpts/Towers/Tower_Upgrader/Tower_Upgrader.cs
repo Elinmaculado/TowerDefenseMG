@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
+using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
@@ -11,13 +12,15 @@ public class Tower_Upgrader : MonoBehaviour
     [SerializeField] private List<float> AttackSpeed;
     [SerializeField] private List<float> Damage;
     [SerializeField] private List<int> ammoSpeed;
-    [SerializeField] private int topUpgradeTier;
+    public int topUpgradeTier;
     [SerializeField] private List<int> topUpgradeCost;
-    [SerializeField] private int downUpgradeTier;
+    public int downUpgradeTier;
     [SerializeField] private List<int> downUpgradeCost;
     [SerializeField] Tower_Stats ts;
     public GResourceManager ResourceManager;
     [SerializeField] private ParticleSystem upgradeEffect;
+    public string topDescription;
+    public string downDescription;
 
     // aqui va a ver codigo
 
@@ -27,48 +30,63 @@ public class Tower_Upgrader : MonoBehaviour
         ResourceManager = FindAnyObjectByType<GResourceManager>();
     }
 
-    public void topUpgrade()
+    public void topUpgrade(TextMeshProUGUI topDescription, TextMeshProUGUI topCost)
     {
-        if(downUpgradeTier <=2) 
+        if(downUpgradeTier >=2) 
         {
-            Debug.Log(" el camino esta bloqueado");
+            string originalText = topDescription.text;
+            topDescription.text = "Path locked";
+            StartCoroutine(ReturnText(topDescription, originalText, 2.5f));
         }
         else
         {
-            if (ResourceManager.RecursosActuales > topUpgradeCost[topUpgradeTier])
+            if (ResourceManager.RecursosActuales >= topUpgradeCost[topUpgradeTier])
             {
-                ResourceManager.RecursosActuales -= topUpgradeCost[topUpgradeTier];
+                ResourceManager.RemoveResources(topUpgradeCost[topUpgradeTier]);
                 ts.TowerRange = Range[topUpgradeTier];
-                ts.TowerAttackSpeed = AttackSpeed[downUpgradeTier];
+                ts.TowerAttackSpeed = AttackSpeed[topUpgradeTier];
+                topUpgradeTier++;
+                topCost.text = topUpgradeCost[topUpgradeTier].ToString() + "$";
                 upgradeEffect.Play();
-            }
-            else
-            {
-                Debug.Log("Mensaje");
             }
         }
     }
 
-    public void downUpgrade()
+    public void downUpgrade(TextMeshProUGUI downDescription, TextMeshProUGUI downCost)
     {
-        if(topUpgradeTier <=2)
+        if(topUpgradeTier >=2)
         {
-            Debug.Log("camino bloqueado");
+            string originalText = downDescription.text;
+            downDescription.text = "Path locked";
+            StartCoroutine(ReturnText(downDescription, originalText, 2.5f));
         }
         else
         {
-            if (ResourceManager.RecursosActuales > topUpgradeCost[topUpgradeTier])
+            if (ResourceManager.RecursosActuales >= topUpgradeCost[downUpgradeTier])
             {
-                ResourceManager.RecursosActuales -= topUpgradeCost[topUpgradeTier];
+                ResourceManager.RemoveResources(topUpgradeCost[downUpgradeTier]);
                 ts.TowerDamage = Damage[downUpgradeTier];
-                ts.ammoSpeed = ammoSpeed[topUpgradeTier];
+                ts.ammoSpeed = ammoSpeed[downUpgradeTier];
+                downUpgradeTier++;
+                downCost.text = topUpgradeCost[downUpgradeTier].ToString() + "$";
                 upgradeEffect.Play();
             }
-            else
-            {
-                Debug.Log("el piojo");
-            }
         }
+    }
+
+    public int TopCost()
+    {
+        return topUpgradeCost[topUpgradeTier];
+    }  
+    public int DownCost()
+    {
+        return topUpgradeCost[topUpgradeTier];
+    }
+
+    IEnumerator ReturnText(TextMeshProUGUI textSource, string text, float returnTime)
+    {
+        yield return new WaitForSeconds(returnTime);
+        textSource.text = text;
     }
     public void AddCost(int cost)
     {

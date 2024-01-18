@@ -9732,6 +9732,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2373821665625079279}
     - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: topDescription
+      value: more attack speed and range
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: downDescription
+      value: more projectile speed and damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: Range.Array.size
       value: 4
       objectReference: {fileID: 0}

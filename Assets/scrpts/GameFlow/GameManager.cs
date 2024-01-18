@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip losseMusic;
     [SerializeField] private List<AudioClip> losseSounds;
     bool isGameOver = false;
+    [SerializeField] bool isInfinite = false;
 
     public int totalOffEnemies;
     public Image fillImage;
@@ -50,22 +51,29 @@ public class GameManager : MonoBehaviour
 
     public void LevelCleared()
     {
-        levelMenu.SetActive(false);
-        musicLevel.Stop();
-        WinSound();
-        winScreen.gameObject.SetActive(true);
+        
+            levelMenu.SetActive(false);
+            musicLevel.Stop();
+            WinSound();
+            winScreen.gameObject.SetActive(true);
+        
+    
     }
 
     public void IsLevelCleared()
     {
-        currentEnemies--;
-        float fillValue = currentEnemies / totalOffEnemies;
-        fillImage.fillAmount = fillValue;
-        if(currentEnemies <= 0) 
+        if (!isInfinite)
         {
-            LevelCleared();
+            currentEnemies--;
+            float fillValue = currentEnemies / totalOffEnemies;
+            fillImage.fillAmount = fillValue;
+            if (currentEnemies <= 0)
+            {
+                LevelCleared();
+            }
         }
     }
+
 
     private void WinSound()
     {

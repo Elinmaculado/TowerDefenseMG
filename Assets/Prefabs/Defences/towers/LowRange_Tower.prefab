@@ -55,6 +55,8 @@ MonoBehaviour:
   ts: {fileID: 2678120863482893724}
   ResourceManager: {fileID: 0}
   upgradeEffect: {fileID: 0}
+  topDescription: 
+  downDescription: 
 --- !u!1 &1546185192825051143
 GameObject:
   m_ObjectHideFlags: 0
@@ -10106,6 +10108,14 @@ PrefabInstance:
       propertyPath: upgradeEffect
       value: 
       objectReference: {fileID: 6076134933645192051}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: topDescription
+      value: More attack speed and range
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: downDescription
+      value: More projectile speed and damage
+      objectReference: {fileID: 0}
     - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: Range.Array.size
       value: 4

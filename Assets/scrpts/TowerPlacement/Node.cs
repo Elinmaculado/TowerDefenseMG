@@ -55,7 +55,7 @@ public class Node : MonoBehaviour
     {
         if(turret != null)
         {
-            Debug.Log("Open upgrade UI");
+            UpgraderUI.instance.SetUI(turret.GetComponentInChildren<Tower_Upgrader>());
         }
         else
         {
