@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
 
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
     [SerializeField] List<GameObject> turrets;
+    [SerializeField] List<Image> turretImages;
 
     private void Awake()
     {
@@ -22,6 +25,7 @@ public class BuildManager : MonoBehaviour
     private void Start()
     {
         turretBuild = standerdTurretPrefab;
+        turretImages[0].color = Color.red;
     }
 
 
@@ -34,6 +38,8 @@ public class BuildManager : MonoBehaviour
 
     public void SetTurret(int turret)
     {
+        for(int i = 0; i < turretImages.Count; i++) { turretImages[i].color = Color.white; }
         turretBuild = turrets[turret];
+        turretImages[turret].color = Color.red;
     }
 }

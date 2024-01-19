@@ -9731,6 +9731,122 @@ PrefabInstance:
       propertyPath: upgradeEffect
       value: 
       objectReference: {fileID: 2373821665625079279}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: topDescription
+      value: more attack speed and range
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: downDescription
+      value: more projectile speed and damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Range.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Damage.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Range.Array.data[0]
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Range.Array.data[1]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Range.Array.data[2]
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Range.Array.data[3]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Damage.Array.data[0]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Damage.Array.data[1]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Damage.Array.data[2]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: Damage.Array.data[3]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: AttackSpeed.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: ammoSpeed.Array.data[0]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: ammoSpeed.Array.data[1]
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: ammoSpeed.Array.data[2]
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: ammoSpeed.Array.data[3]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: AttackSpeed.Array.data[0]
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: AttackSpeed.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: AttackSpeed.Array.data[2]
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: AttackSpeed.Array.data[3]
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: topUpgradeCost.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: topUpgradeCost.Array.data[1]
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: topUpgradeCost.Array.data[2]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: topUpgradeCost.Array.data[3]
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: downUpgradeCost.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: downUpgradeCost.Array.data[1]
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: downUpgradeCost.Array.data[2]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435265695586699865, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
+      propertyPath: downUpgradeCost.Array.data[3]
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 2915736623201427812, guid: 067cf2f889bcc0f42ae3ae3167c0210d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9901,7 +10017,7 @@ AudioSource:
   m_GameObject: {fileID: 592853586556253507}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7866581244724228400, guid: 0dd804f33137dad44abac58fe81bf0bb, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
