@@ -159,11 +159,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  movementSpeed: 9
+  movementSpeed: 7.5
   rotationSpeed: 10
   TargetIndex: 1
   destroyTime: 3.5
-  maxLife: 75
+  maxLife: 50
   fillImage: {fileID: 165657654409318390}
   isDead: 0
   damage: 10

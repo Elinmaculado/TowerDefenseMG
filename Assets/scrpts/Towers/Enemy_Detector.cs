@@ -83,4 +83,6 @@ public class Enemy_Detector : MonoBehaviour
             Enemylist.Remove(other.gameObject);
         }
     }
+
+
 }
