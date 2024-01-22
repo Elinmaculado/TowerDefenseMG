@@ -31,10 +31,10 @@ public class UpgraderUI : MonoBehaviour
     {
         topUpgrade.fillAmount = towerToUpgrade.topUpgradeTier/ 4;
         topDescription.text = towerToUpgrade.topDescription;
-        topCost.text = towerToUpgrade.DownCost().ToString() + "$";
+        topCost.text = towerToUpgrade.TopCost().ToString() + "$";
         downUpgrade.fillAmount = towerToUpgrade.downUpgradeTier / 4;
         downDescription.text = towerToUpgrade.downDescription;
-        downCost.text = towerToUpgrade.TopCost().ToString() + "$";
+        downCost.text = towerToUpgrade.DownCost().ToString() + "$";
         toUpdate = towerToUpgrade;
         
     }

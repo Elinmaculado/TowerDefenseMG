@@ -4565,8 +4565,8 @@ MonoBehaviour:
   wayPoints: {fileID: 624147321}
   initianMaxTime: 20
   initialMinTime: 16
-  minMaxTime: 10
-  minMinTime: 8
+  minMaxTime: 3
+  minMinTime: 5
   initialEnemies:
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
@@ -4862,8 +4862,8 @@ MonoBehaviour:
   wayPoints: {fileID: 921759609}
   initianMaxTime: 80
   initialMinTime: 70
-  minMaxTime: 30
-  minMinTime: 35
+  minMaxTime: 15
+  minMinTime: 10
   initialEnemies:
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
@@ -4987,8 +4987,8 @@ MonoBehaviour:
   wayPoints: {fileID: 1144388896}
   initianMaxTime: 22
   initialMinTime: 20
-  minMaxTime: 7
-  minMinTime: 5
+  minMaxTime: 4
+  minMinTime: 2
   initialEnemies:
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
@@ -5671,8 +5671,8 @@ MonoBehaviour:
   wayPoints: {fileID: 1515366595}
   initianMaxTime: 22
   initialMinTime: 20
-  minMaxTime: 10
-  minMinTime: 8
+  minMaxTime: 4
+  minMinTime: 2
   initialEnemies:
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
@@ -5984,8 +5984,8 @@ MonoBehaviour:
   wayPoints: {fileID: 1674494957}
   initianMaxTime: 18
   initialMinTime: 16
-  minMaxTime: 7
-  minMinTime: 5
+  minMaxTime: 4
+  minMinTime: 2
   initialEnemies:
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
   - {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}

@@ -80,7 +80,7 @@ public class Tower_Upgrader : MonoBehaviour
     }  
     public int DownCost()
     {
-        return topUpgradeCost[topUpgradeTier];
+        return topUpgradeCost[downUpgradeTier];
     }
 
     IEnumerator ReturnText(TextMeshProUGUI textSource, string text, float returnTime)
