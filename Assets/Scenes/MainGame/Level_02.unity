@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1169,9 +1169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelEnemies:
   - enemieType: {fileID: 1827621834852165962, guid: cb07445ca1a00914d8cecf246c7bb6a6, type: 3}
-    enemyAmount: 55
+    enemyAmount: 15
   - enemieType: {fileID: 2220251562144621477, guid: 3b13b8dad9da7a04f8444ba05a6e0db1, type: 3}
-    enemyAmount: 45
+    enemyAmount: 25
+  - enemieType: {fileID: 5519343667729206328, guid: 5df26d25800e72041b0659bc19ab73f3, type: 3}
+    enemyAmount: 50
   spawnPositions:
   - {fileID: 376489239}
   - {fileID: 710426877}

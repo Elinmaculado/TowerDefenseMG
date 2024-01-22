@@ -50,11 +50,11 @@ public class InfiniteSpawner : MonoBehaviour
     {
         if (initialMinTime > minMinTime)
         {
-            initialMinTime-=0.5f;
+            initialMinTime-=0.2f;
         }
         if (initianMaxTime > minMaxTime)
         {
-            initianMaxTime-=0.5f;
+            initianMaxTime-=0.2f;
         }
         yield return new WaitForSeconds(Random.Range(initialMinTime,initianMaxTime));
         SpawnEnemy();
